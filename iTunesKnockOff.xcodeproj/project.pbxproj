@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D4DDDABB19D227E100B72F23 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDABA19D227E100B72F23 /* Cocoa.framework */; };
+		D4DDDAC519D227E100B72F23 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDAC319D227E100B72F23 /* InfoPlist.strings */; };
+		D4DDDAC719D227E100B72F23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDAC619D227E100B72F23 /* main.m */; };
+		D4DDDACB19D227E100B72F23 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDAC919D227E100B72F23 /* Credits.rtf */; };
+		D4DDDACE19D227E100B72F23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDACD19D227E100B72F23 /* AppDelegate.m */; };
+		D4DDDAD119D227E100B72F23 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDACF19D227E100B72F23 /* MainMenu.xib */; };
+		D4DDDAD419D227E100B72F23 /* iTunesKnockOff.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDAD219D227E100B72F23 /* iTunesKnockOff.xcdatamodeld */; };
+		D4DDDAD619D227E100B72F23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDAD519D227E100B72F23 /* Images.xcassets */; };
+		D4DDDADD19D227E100B72F23 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDADC19D227E100B72F23 /* XCTest.framework */; };
+		D4DDDADE19D227E100B72F23 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDABA19D227E100B72F23 /* Cocoa.framework */; };
+		D4DDDAE619D227E100B72F23 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDAE419D227E100B72F23 /* InfoPlist.strings */; };
+		D4DDDAE819D227E100B72F23 /* iTunesKnockOffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDAE719D227E100B72F23 /* iTunesKnockOffTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4DDDADF19D227E100B72F23 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4DDDAAF19D227E100B72F23 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4DDDAB619D227E100B72F23;
+			remoteInfo = iTunesKnockOff;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D4DDDAB719D227E100B72F23 /* iTunesKnockOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesKnockOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DDDABA19D227E100B72F23 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D4DDDABD19D227E100B72F23 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		D4DDDABE19D227E100B72F23 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		D4DDDABF19D227E100B72F23 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D4DDDAC219D227E100B72F23 /* iTunesKnockOff-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTunesKnockOff-Info.plist"; sourceTree = "<group>"; };
+		D4DDDAC419D227E100B72F23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4DDDAC619D227E100B72F23 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D4DDDAC819D227E100B72F23 /* iTunesKnockOff-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iTunesKnockOff-Prefix.pch"; sourceTree = "<group>"; };
+		D4DDDACA19D227E100B72F23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		D4DDDACC19D227E100B72F23 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D4DDDACD19D227E100B72F23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D4DDDAD019D227E100B72F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		D4DDDAD319D227E100B72F23 /* iTunesKnockOff.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTunesKnockOff.xcdatamodel; sourceTree = "<group>"; };
+		D4DDDAD519D227E100B72F23 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D4DDDADB19D227E100B72F23 /* iTunesKnockOffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesKnockOffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4DDDADC19D227E100B72F23 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D4DDDAE319D227E100B72F23 /* iTunesKnockOffTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTunesKnockOffTests-Info.plist"; sourceTree = "<group>"; };
+		D4DDDAE519D227E100B72F23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D4DDDAE719D227E100B72F23 /* iTunesKnockOffTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesKnockOffTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4DDDAB419D227E100B72F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDDABB19D227E100B72F23 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DDDAD819D227E100B72F23 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDDADE19D227E100B72F23 /* Cocoa.framework in Frameworks */,
+				D4DDDADD19D227E100B72F23 /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D4DDDAAE19D227E100B72F23 = {
+			isa = PBXGroup;
+			children = (
+				D4DDDAC019D227E100B72F23 /* iTunesKnockOff */,
+				D4DDDAE119D227E100B72F23 /* iTunesKnockOffTests */,
+				D4DDDAB919D227E100B72F23 /* Frameworks */,
+				D4DDDAB819D227E100B72F23 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D4DDDAB819D227E100B72F23 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDAB719D227E100B72F23 /* iTunesKnockOff.app */,
+				D4DDDADB19D227E100B72F23 /* iTunesKnockOffTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4DDDAB919D227E100B72F23 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDABA19D227E100B72F23 /* Cocoa.framework */,
+				D4DDDADC19D227E100B72F23 /* XCTest.framework */,
+				D4DDDABC19D227E100B72F23 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4DDDABC19D227E100B72F23 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDABD19D227E100B72F23 /* AppKit.framework */,
+				D4DDDABE19D227E100B72F23 /* CoreData.framework */,
+				D4DDDABF19D227E100B72F23 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		D4DDDAC019D227E100B72F23 /* iTunesKnockOff */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDACC19D227E100B72F23 /* AppDelegate.h */,
+				D4DDDACD19D227E100B72F23 /* AppDelegate.m */,
+				D4DDDACF19D227E100B72F23 /* MainMenu.xib */,
+				D4DDDAD519D227E100B72F23 /* Images.xcassets */,
+				D4DDDAD219D227E100B72F23 /* iTunesKnockOff.xcdatamodeld */,
+				D4DDDAC119D227E100B72F23 /* Supporting Files */,
+			);
+			path = iTunesKnockOff;
+			sourceTree = "<group>";
+		};
+		D4DDDAC119D227E100B72F23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDAC219D227E100B72F23 /* iTunesKnockOff-Info.plist */,
+				D4DDDAC319D227E100B72F23 /* InfoPlist.strings */,
+				D4DDDAC619D227E100B72F23 /* main.m */,
+				D4DDDAC819D227E100B72F23 /* iTunesKnockOff-Prefix.pch */,
+				D4DDDAC919D227E100B72F23 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D4DDDAE119D227E100B72F23 /* iTunesKnockOffTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDAE719D227E100B72F23 /* iTunesKnockOffTests.m */,
+				D4DDDAE219D227E100B72F23 /* Supporting Files */,
+			);
+			path = iTunesKnockOffTests;
+			sourceTree = "<group>";
+		};
+		D4DDDAE219D227E100B72F23 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDAE319D227E100B72F23 /* iTunesKnockOffTests-Info.plist */,
+				D4DDDAE419D227E100B72F23 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4DDDAB619D227E100B72F23 /* iTunesKnockOff */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4DDDAEB19D227E100B72F23 /* Build configuration list for PBXNativeTarget "iTunesKnockOff" */;
+			buildPhases = (
+				D4DDDAB319D227E100B72F23 /* Sources */,
+				D4DDDAB419D227E100B72F23 /* Frameworks */,
+				D4DDDAB519D227E100B72F23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iTunesKnockOff;
+			productName = iTunesKnockOff;
+			productReference = D4DDDAB719D227E100B72F23 /* iTunesKnockOff.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4DDDADA19D227E100B72F23 /* iTunesKnockOffTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4DDDAEE19D227E100B72F23 /* Build configuration list for PBXNativeTarget "iTunesKnockOffTests" */;
+			buildPhases = (
+				D4DDDAD719D227E100B72F23 /* Sources */,
+				D4DDDAD819D227E100B72F23 /* Frameworks */,
+				D4DDDAD919D227E100B72F23 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4DDDAE019D227E100B72F23 /* PBXTargetDependency */,
+			);
+			name = iTunesKnockOffTests;
+			productName = iTunesKnockOffTests;
+			productReference = D4DDDADB19D227E100B72F23 /* iTunesKnockOffTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4DDDAAF19D227E100B72F23 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = DESHMUKH;
+				TargetAttributes = {
+					D4DDDADA19D227E100B72F23 = {
+						TestTargetID = D4DDDAB619D227E100B72F23;
+					};
+				};
+			};
+			buildConfigurationList = D4DDDAB219D227E100B72F23 /* Build configuration list for PBXProject "iTunesKnockOff" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4DDDAAE19D227E100B72F23;
+			productRefGroup = D4DDDAB819D227E100B72F23 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4DDDAB619D227E100B72F23 /* iTunesKnockOff */,
+				D4DDDADA19D227E100B72F23 /* iTunesKnockOffTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4DDDAB519D227E100B72F23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDDAC519D227E100B72F23 /* InfoPlist.strings in Resources */,
+				D4DDDAD619D227E100B72F23 /* Images.xcassets in Resources */,
+				D4DDDACB19D227E100B72F23 /* Credits.rtf in Resources */,
+				D4DDDAD119D227E100B72F23 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DDDAD919D227E100B72F23 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDDAE619D227E100B72F23 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4DDDAB319D227E100B72F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDDACE19D227E100B72F23 /* AppDelegate.m in Sources */,
+				D4DDDAD419D227E100B72F23 /* iTunesKnockOff.xcdatamodeld in Sources */,
+				D4DDDAC719D227E100B72F23 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4DDDAD719D227E100B72F23 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4DDDAE819D227E100B72F23 /* iTunesKnockOffTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4DDDAE019D227E100B72F23 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4DDDAB619D227E100B72F23 /* iTunesKnockOff */;
+			targetProxy = D4DDDADF19D227E100B72F23 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D4DDDAC319D227E100B72F23 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DDDAC419D227E100B72F23 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D4DDDAC919D227E100B72F23 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DDDACA19D227E100B72F23 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		D4DDDACF19D227E100B72F23 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DDDAD019D227E100B72F23 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		D4DDDAE419D227E100B72F23 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D4DDDAE519D227E100B72F23 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D4DDDAE919D227E100B72F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		D4DDDAEA19D227E100B72F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		D4DDDAEC19D227E100B72F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
+				INFOPLIST_FILE = "iTunesKnockOff/iTunesKnockOff-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D4DDDAED19D227E100B72F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
+				INFOPLIST_FILE = "iTunesKnockOff/iTunesKnockOff-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D4DDDAEF19D227E100B72F23 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTunesKnockOff.app/Contents/MacOS/iTunesKnockOff";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "iTunesKnockOffTests/iTunesKnockOffTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D4DDDAF019D227E100B72F23 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iTunesKnockOff.app/Contents/MacOS/iTunesKnockOff";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
+				INFOPLIST_FILE = "iTunesKnockOffTests/iTunesKnockOffTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4DDDAB219D227E100B72F23 /* Build configuration list for PBXProject "iTunesKnockOff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DDDAE919D227E100B72F23 /* Debug */,
+				D4DDDAEA19D227E100B72F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D4DDDAEB19D227E100B72F23 /* Build configuration list for PBXNativeTarget "iTunesKnockOff" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DDDAEC19D227E100B72F23 /* Debug */,
+				D4DDDAED19D227E100B72F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D4DDDAEE19D227E100B72F23 /* Build configuration list for PBXNativeTarget "iTunesKnockOffTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D4DDDAEF19D227E100B72F23 /* Debug */,
+				D4DDDAF019D227E100B72F23 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D4DDDAD219D227E100B72F23 /* iTunesKnockOff.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D4DDDAD319D227E100B72F23 /* iTunesKnockOff.xcdatamodel */,
+			);
+			currentVersion = D4DDDAD319D227E100B72F23 /* iTunesKnockOff.xcdatamodel */;
+			path = iTunesKnockOff.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = D4DDDAAF19D227E100B72F23 /* Project object */;
+}
