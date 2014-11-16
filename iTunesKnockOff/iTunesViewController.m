@@ -149,10 +149,8 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
 }
 - (IBAction)stopTrack:(id)sender {
     //NSLog(@"stop");
-    [self.aryTracks shuffle];
-    [self.tblViewPlaylist reloadData];
-   /* [self.audioPlayer setCurrentTime:0];
-    [self.audioPlayer stop];*/
+    [self.audioPlayer setCurrentTime:0];
+    [self.audioPlayer stop];
 }
 - (void) sortByClm:(NSString*)sortDiscriptor {
     
