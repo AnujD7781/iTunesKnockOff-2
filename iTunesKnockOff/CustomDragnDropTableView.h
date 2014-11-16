@@ -1,5 +1,5 @@
 /*
-//  AppDelegate.h
+//  CustomDragnDropTableView.h
 //  iTunesKnockOff
 The MIT License (MIT)
 Copyright (c) 2014 Anuj Deshmukh (anuj.deshmukh7@gmail.com & www.linkedin.com/pub/anuj-deshmukh/17/16b/56a/)
@@ -21,31 +21,20 @@ THE SOFTWARE.
 */
 
 #import <Cocoa/Cocoa.h>
-#import "iTunesViewController.h"
-#import "MainWindowViewController.h"
-@interface AppDelegate : NSObject <NSApplicationDelegate> 
-@property (weak) IBOutlet NSMenuItem *MenuITEM;
-@property (weak) IBOutlet NSMenuItem *menuAddSongs;
-@property (weak) IBOutlet NSMenuItem *menuDeleteSongs;
+#import <Foundation/Foundation.h>
+#import <AppKit/AppKit.h>
+@protocol NSTablePlaylistDelegate;
 
+@interface CustomDragnDropTableView : NSTableView <NSDraggingSource> {
+    id <NSTablePlaylistDelegate> PlayListdelegate;
 
-@property (nonatomic, retain) iTunesViewController *musicPlayerController;
-@property (strong) MainWindowViewController *mainView;
-@property (assign) IBOutlet NSWindow *window;
+}
+@property (nonatomic,retain) id PlayListdelegate;
 
-@property (weak) IBOutlet NSView *customView;
-@property (strong, nonatomic) NSStatusItem *statusItem;
-@property (weak) IBOutlet NSMenuItem *menuItem;
-- (IBAction)menuAddSongs:(id)sender;
-- (IBAction)menuDeleteSongs:(id)sender;
-- (IBAction)menuAddPlaylist:(id)sender;
-- (IBAction)OpenSong:(id)sender;
-- (IBAction)menuDeletePlaylist:(id)sender;
-- (IBAction)menuOpenInNewWindow:(id)sender;
+@end
+@protocol NSTablePlaylistDelegate
+@required
 
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
+- (void)deleteSelectedPlaylist;
 
 @end

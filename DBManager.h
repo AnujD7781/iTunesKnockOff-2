@@ -1,5 +1,5 @@
 /*
-//  AppDelegate.h
+//  DBManager.h
 //  iTunesKnockOff
 The MIT License (MIT)
 Copyright (c) 2014 Anuj Deshmukh (anuj.deshmukh7@gmail.com & www.linkedin.com/pub/anuj-deshmukh/17/16b/56a/)
@@ -20,32 +20,25 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-#import <Cocoa/Cocoa.h>
-#import "iTunesViewController.h"
-#import "MainWindowViewController.h"
-@interface AppDelegate : NSObject <NSApplicationDelegate> 
-@property (weak) IBOutlet NSMenuItem *MenuITEM;
-@property (weak) IBOutlet NSMenuItem *menuAddSongs;
-@property (weak) IBOutlet NSMenuItem *menuDeleteSongs;
+#import <Foundation/Foundation.h>
+#import <sqlite3.h>
+#import "SongData.h"
 
+@interface DBManager : NSObject {
+    NSString *databasePath;
+}
 
-@property (nonatomic, retain) iTunesViewController *musicPlayerController;
-@property (strong) MainWindowViewController *mainView;
-@property (assign) IBOutlet NSWindow *window;
++(DBManager*)getSharedInstance;
+-(BOOL)createDB;
+-(BOOL) saveData:(NSArray*)arySongData;
 
-@property (weak) IBOutlet NSView *customView;
-@property (strong, nonatomic) NSStatusItem *statusItem;
-@property (weak) IBOutlet NSMenuItem *menuItem;
-- (IBAction)menuAddSongs:(id)sender;
-- (IBAction)menuDeleteSongs:(id)sender;
-- (IBAction)menuAddPlaylist:(id)sender;
-- (IBAction)OpenSong:(id)sender;
-- (IBAction)menuDeletePlaylist:(id)sender;
-- (IBAction)menuOpenInNewWindow:(id)sender;
+-(NSArray*) getSongList;
+-(NSArray*) getPlaylistFor:(NSString*)playlistName;
+- (BOOL) removeSongFromList:(SongData*)songData ;
+-(BOOL) saveSongPlayListName:(NSString*)playListName;
+-(BOOL) saveSongInPlayList:(NSArray*)arrSongData withName:(NSString*)playListName;
 
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
-
+- (BOOL) removeSong:(SongData*)songData fromPlayList:(NSString*)strPlayList;
+- (BOOL) removePlayList:(NSString*)playListName;
+-(NSArray*) getAllPlayListNames;
 @end

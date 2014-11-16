@@ -1,5 +1,5 @@
 /*
-//  AppDelegate.h
+//  iTunesWindowController.m
 //  iTunesKnockOff
 The MIT License (MIT)
 Copyright (c) 2014 Anuj Deshmukh (anuj.deshmukh7@gmail.com & www.linkedin.com/pub/anuj-deshmukh/17/16b/56a/)
@@ -20,32 +20,20 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-#import <Cocoa/Cocoa.h>
-#import "iTunesViewController.h"
-#import "MainWindowViewController.h"
-@interface AppDelegate : NSObject <NSApplicationDelegate> 
-@property (weak) IBOutlet NSMenuItem *MenuITEM;
-@property (weak) IBOutlet NSMenuItem *menuAddSongs;
-@property (weak) IBOutlet NSMenuItem *menuDeleteSongs;
+#import "iTunesWindowController.h"
 
+@interface iTunesWindowController ()
 
-@property (nonatomic, retain) iTunesViewController *musicPlayerController;
-@property (strong) MainWindowViewController *mainView;
-@property (assign) IBOutlet NSWindow *window;
+@end
 
-@property (weak) IBOutlet NSView *customView;
-@property (strong, nonatomic) NSStatusItem *statusItem;
-@property (weak) IBOutlet NSMenuItem *menuItem;
-- (IBAction)menuAddSongs:(id)sender;
-- (IBAction)menuDeleteSongs:(id)sender;
-- (IBAction)menuAddPlaylist:(id)sender;
-- (IBAction)OpenSong:(id)sender;
-- (IBAction)menuDeletePlaylist:(id)sender;
-- (IBAction)menuOpenInNewWindow:(id)sender;
+@implementation iTunesWindowController
+@synthesize viewController = _viewController;
+- (void)windowDidLoad {
+    
+    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+    _viewController = [[iTunesViewController alloc]initWithNibName:@"iTunesViewController" bundle:nil];
+    [customView addSubview:_viewController.view];
 
-@property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
-@property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
-@property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
-
+}
 
 @end

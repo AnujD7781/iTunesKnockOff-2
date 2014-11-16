@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D49745CC1A1573DF000B6890 /* NSArrayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D49745CB1A1573DF000B6890 /* NSArrayHelper.m */; };
+		D49745CF1A158549000B6890 /* ArraySortFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D49745CE1A158549000B6890 /* ArraySortFactory.m */; };
+		D4B9E57419FBC24900FBAE8E /* MainWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E57219FBC24900FBAE8E /* MainWindowViewController.m */; };
+		D4B9E57519FBC24900FBAE8E /* MainWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B9E57319FBC24900FBAE8E /* MainWindowViewController.xib */; };
+		D4B9E5A719FE430700FBAE8E /* iTunesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E5A519FE430700FBAE8E /* iTunesWindowController.m */; };
+		D4B9E5A819FE430700FBAE8E /* iTunesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B9E5A619FE430700FBAE8E /* iTunesWindowController.xib */; };
+		D4D4F63E19E5422500DC85E6 /* CustomDrangNDropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D4F63D19E5422500DC85E6 /* CustomDrangNDropView.m */; };
+		D4D4F6AD19E6675700DC85E6 /* CustomDragnDropTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D4F6AC19E6675700DC85E6 /* CustomDragnDropTableView.m */; };
+		D4D4F6B219E73E4500DC85E6 /* green_Background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D4D4F6B119E73E4500DC85E6 /* green_Background.jpg */; };
+		D4D4F6C119E86CA000DC85E6 /* remove.png in Resources */ = {isa = PBXBuildFile; fileRef = D4D4F6C019E86CA000DC85E6 /* remove.png */; };
+		D4D4F6CF19ECB11300DC85E6 /* iTunesDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = D4D4F6CE19ECB11300DC85E6 /* iTunesDB.sqlite3 */; };
+		D4D4F6D019ECB11300DC85E6 /* iTunesDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = D4D4F6CE19ECB11300DC85E6 /* iTunesDB.sqlite3 */; };
 		D4DDDABB19D227E100B72F23 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDABA19D227E100B72F23 /* Cocoa.framework */; };
 		D4DDDAC519D227E100B72F23 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDAC319D227E100B72F23 /* InfoPlist.strings */; };
 		D4DDDAC719D227E100B72F23 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDAC619D227E100B72F23 /* main.m */; };
@@ -14,11 +26,31 @@
 		D4DDDACE19D227E100B72F23 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDACD19D227E100B72F23 /* AppDelegate.m */; };
 		D4DDDAD119D227E100B72F23 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDACF19D227E100B72F23 /* MainMenu.xib */; };
 		D4DDDAD419D227E100B72F23 /* iTunesKnockOff.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDAD219D227E100B72F23 /* iTunesKnockOff.xcdatamodeld */; };
-		D4DDDAD619D227E100B72F23 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDAD519D227E100B72F23 /* Images.xcassets */; };
 		D4DDDADD19D227E100B72F23 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDADC19D227E100B72F23 /* XCTest.framework */; };
 		D4DDDADE19D227E100B72F23 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDABA19D227E100B72F23 /* Cocoa.framework */; };
 		D4DDDAE619D227E100B72F23 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDAE419D227E100B72F23 /* InfoPlist.strings */; };
 		D4DDDAE819D227E100B72F23 /* iTunesKnockOffTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDAE719D227E100B72F23 /* iTunesKnockOffTests.m */; };
+		D4DDDB0219D27C8A00B72F23 /* icons.icns in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0119D27C8A00B72F23 /* icons.icns */; };
+		D4DDDB0F19D27FC900B72F23 /* CurrentlyPlaying.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0519D27FC900B72F23 /* CurrentlyPlaying.png */; };
+		D4DDDB1019D27FC900B72F23 /* Fwd.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0619D27FC900B72F23 /* Fwd.png */; };
+		D4DDDB1119D27FC900B72F23 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0719D27FC900B72F23 /* next.png */; };
+		D4DDDB1219D27FC900B72F23 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0819D27FC900B72F23 /* Pause.png */; };
+		D4DDDB1319D27FC900B72F23 /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0919D27FC900B72F23 /* Play.png */; };
+		D4DDDB1419D27FC900B72F23 /* previous.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0A19D27FC900B72F23 /* previous.png */; };
+		D4DDDB1519D27FC900B72F23 /* Rew.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0B19D27FC900B72F23 /* Rew.png */; };
+		D4DDDB1619D27FC900B72F23 /* Sound_Full.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0C19D27FC900B72F23 /* Sound_Full.png */; };
+		D4DDDB1719D27FC900B72F23 /* Sound_Off.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0D19D27FC900B72F23 /* Sound_Off.png */; };
+		D4DDDB1819D27FC900B72F23 /* Stop.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB0E19D27FC900B72F23 /* Stop.png */; };
+		D4DDDB1A19D2857A00B72F23 /* Open.png in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB1919D2857A00B72F23 /* Open.png */; };
+		D4DDDB1C19D28FDD00B72F23 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDB1B19D28FDD00B72F23 /* AudioToolbox.framework */; };
+		D4DDDB1E19D28FE400B72F23 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDB1D19D28FE400B72F23 /* CoreAudio.framework */; };
+		D4DDDB2019D28FEA00B72F23 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDB1F19D28FEA00B72F23 /* CoreAudioKit.framework */; };
+		D4DDDB2219D28FF800B72F23 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4DDDB2119D28FF800B72F23 /* AVFoundation.framework */; };
+		D4DDDB2819D2BF5B00B72F23 /* SongData.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDB2619D2BF5B00B72F23 /* SongData.m */; };
+		D4DDDB7E19D3425700B72F23 /* iTunesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4DDDB7C19D3425700B72F23 /* iTunesViewController.m */; };
+		D4DDDB7F19D3425700B72F23 /* iTunesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB7D19D3425700B72F23 /* iTunesViewController.xib */; };
+		D4E5BB9319D9078400FF81E8 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E5BB9219D9078400FF81E8 /* DBManager.m */; };
+		D4E5BB9519D9079200FF81E8 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E5BB9419D9079200FF81E8 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +64,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D49745CA1A1573DF000B6890 /* NSArrayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayHelper.h; sourceTree = "<group>"; };
+		D49745CB1A1573DF000B6890 /* NSArrayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayHelper.m; sourceTree = "<group>"; };
+		D49745CD1A158549000B6890 /* ArraySortFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArraySortFactory.h; sourceTree = "<group>"; };
+		D49745CE1A158549000B6890 /* ArraySortFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArraySortFactory.m; sourceTree = "<group>"; };
+		D4B9E57119FBC24900FBAE8E /* MainWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindowViewController.h; path = ../MainWindowViewController.h; sourceTree = "<group>"; };
+		D4B9E57219FBC24900FBAE8E /* MainWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindowViewController.m; path = ../MainWindowViewController.m; sourceTree = "<group>"; };
+		D4B9E57319FBC24900FBAE8E /* MainWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindowViewController.xib; path = ../MainWindowViewController.xib; sourceTree = "<group>"; };
+		D4B9E5A419FE430700FBAE8E /* iTunesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesWindowController.h; sourceTree = "<group>"; };
+		D4B9E5A519FE430700FBAE8E /* iTunesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesWindowController.m; sourceTree = "<group>"; };
+		D4B9E5A619FE430700FBAE8E /* iTunesWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iTunesWindowController.xib; sourceTree = "<group>"; };
+		D4D4F63C19E5422500DC85E6 /* CustomDrangNDropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomDrangNDropView.h; path = ../CustomDrangNDropView.h; sourceTree = "<group>"; };
+		D4D4F63D19E5422500DC85E6 /* CustomDrangNDropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomDrangNDropView.m; path = ../CustomDrangNDropView.m; sourceTree = "<group>"; };
+		D4D4F6AB19E6675700DC85E6 /* CustomDragnDropTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomDragnDropTableView.h; sourceTree = "<group>"; };
+		D4D4F6AC19E6675700DC85E6 /* CustomDragnDropTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomDragnDropTableView.m; sourceTree = "<group>"; };
+		D4D4F6B119E73E4500DC85E6 /* green_Background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green_Background.jpg; sourceTree = "<group>"; };
+		D4D4F6C019E86CA000DC85E6 /* remove.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = remove.png; sourceTree = "<group>"; };
+		D4D4F6CE19ECB11300DC85E6 /* iTunesDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesDB.sqlite3; sourceTree = "<group>"; };
 		D4DDDAB719D227E100B72F23 /* iTunesKnockOff.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTunesKnockOff.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DDDABA19D227E100B72F23 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		D4DDDABD19D227E100B72F23 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -46,12 +95,35 @@
 		D4DDDACD19D227E100B72F23 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D4DDDAD019D227E100B72F23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		D4DDDAD319D227E100B72F23 /* iTunesKnockOff.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = iTunesKnockOff.xcdatamodel; sourceTree = "<group>"; };
-		D4DDDAD519D227E100B72F23 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D4DDDADB19D227E100B72F23 /* iTunesKnockOffTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesKnockOffTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4DDDADC19D227E100B72F23 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		D4DDDAE319D227E100B72F23 /* iTunesKnockOffTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iTunesKnockOffTests-Info.plist"; sourceTree = "<group>"; };
 		D4DDDAE519D227E100B72F23 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4DDDAE719D227E100B72F23 /* iTunesKnockOffTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iTunesKnockOffTests.m; sourceTree = "<group>"; };
+		D4DDDB0119D27C8A00B72F23 /* icons.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icons.icns; sourceTree = "<group>"; };
+		D4DDDB0519D27FC900B72F23 /* CurrentlyPlaying.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CurrentlyPlaying.png; sourceTree = "<group>"; };
+		D4DDDB0619D27FC900B72F23 /* Fwd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Fwd.png; sourceTree = "<group>"; };
+		D4DDDB0719D27FC900B72F23 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		D4DDDB0819D27FC900B72F23 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
+		D4DDDB0919D27FC900B72F23 /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
+		D4DDDB0A19D27FC900B72F23 /* previous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = previous.png; sourceTree = "<group>"; };
+		D4DDDB0B19D27FC900B72F23 /* Rew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Rew.png; sourceTree = "<group>"; };
+		D4DDDB0C19D27FC900B72F23 /* Sound_Full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sound_Full.png; sourceTree = "<group>"; };
+		D4DDDB0D19D27FC900B72F23 /* Sound_Off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sound_Off.png; sourceTree = "<group>"; };
+		D4DDDB0E19D27FC900B72F23 /* Stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Stop.png; sourceTree = "<group>"; };
+		D4DDDB1919D2857A00B72F23 /* Open.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Open.png; sourceTree = "<group>"; };
+		D4DDDB1B19D28FDD00B72F23 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D4DDDB1D19D28FE400B72F23 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		D4DDDB1F19D28FEA00B72F23 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		D4DDDB2119D28FF800B72F23 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		D4DDDB2519D2BF5B00B72F23 /* SongData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongData.h; sourceTree = "<group>"; };
+		D4DDDB2619D2BF5B00B72F23 /* SongData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongData.m; sourceTree = "<group>"; };
+		D4DDDB7B19D3425700B72F23 /* iTunesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTunesViewController.h; sourceTree = "<group>"; };
+		D4DDDB7C19D3425700B72F23 /* iTunesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTunesViewController.m; sourceTree = "<group>"; };
+		D4DDDB7D19D3425700B72F23 /* iTunesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = iTunesViewController.xib; sourceTree = "<group>"; };
+		D4E5BB9119D9078400FF81E8 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBManager.h; path = ../DBManager.h; sourceTree = "<group>"; };
+		D4E5BB9219D9078400FF81E8 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBManager.m; path = ../DBManager.m; sourceTree = "<group>"; };
+		D4E5BB9419D9079200FF81E8 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +131,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4E5BB9519D9079200FF81E8 /* libsqlite3.0.dylib in Frameworks */,
+				D4DDDB2219D28FF800B72F23 /* AVFoundation.framework in Frameworks */,
+				D4DDDB2019D28FEA00B72F23 /* CoreAudioKit.framework in Frameworks */,
+				D4DDDB1E19D28FE400B72F23 /* CoreAudio.framework in Frameworks */,
+				D4DDDB1C19D28FDD00B72F23 /* AudioToolbox.framework in Frameworks */,
 				D4DDDABB19D227E100B72F23 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -75,6 +152,110 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D49745C91A155DB6000B6890 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				D49745CA1A1573DF000B6890 /* NSArrayHelper.h */,
+				D49745CB1A1573DF000B6890 /* NSArrayHelper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		D4D4F67419E6092A00DC85E6 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D4D4F67B19E609AF00DC85E6 /* DBFactory */,
+				D4D4F67A19E609A100DC85E6 /* SongFactory */,
+				D49745CD1A158549000B6890 /* ArraySortFactory.h */,
+				D49745CE1A158549000B6890 /* ArraySortFactory.m */,
+			);
+			name = Factory;
+			sourceTree = "<group>";
+		};
+		D4D4F67519E6094000DC85E6 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D4B9E5A419FE430700FBAE8E /* iTunesWindowController.h */,
+				D4B9E5A519FE430700FBAE8E /* iTunesWindowController.m */,
+				D4DDDB7B19D3425700B72F23 /* iTunesViewController.h */,
+				D4DDDB7C19D3425700B72F23 /* iTunesViewController.m */,
+				D4B9E57119FBC24900FBAE8E /* MainWindowViewController.h */,
+				D4B9E57219FBC24900FBAE8E /* MainWindowViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D4D4F67619E6094F00DC85E6 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDACC19D227E100B72F23 /* AppDelegate.h */,
+				D4DDDACD19D227E100B72F23 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D4D4F67719E6095C00DC85E6 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D4D4F63C19E5422500DC85E6 /* CustomDrangNDropView.h */,
+				D4D4F63D19E5422500DC85E6 /* CustomDrangNDropView.m */,
+				D4D4F6AB19E6675700DC85E6 /* CustomDragnDropTableView.h */,
+				D4D4F6AC19E6675700DC85E6 /* CustomDragnDropTableView.m */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		D4D4F67919E6098900DC85E6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDB7D19D3425700B72F23 /* iTunesViewController.xib */,
+				D4B9E57319FBC24900FBAE8E /* MainWindowViewController.xib */,
+				D4DDDACF19D227E100B72F23 /* MainMenu.xib */,
+				D4B9E5A619FE430700FBAE8E /* iTunesWindowController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		D4D4F67A19E609A100DC85E6 /* SongFactory */ = {
+			isa = PBXGroup;
+			children = (
+				D4DDDB2519D2BF5B00B72F23 /* SongData.h */,
+				D4DDDB2619D2BF5B00B72F23 /* SongData.m */,
+			);
+			name = SongFactory;
+			sourceTree = "<group>";
+		};
+		D4D4F67B19E609AF00DC85E6 /* DBFactory */ = {
+			isa = PBXGroup;
+			children = (
+				D4E5BB9119D9078400FF81E8 /* DBManager.h */,
+				D4E5BB9219D9078400FF81E8 /* DBManager.m */,
+			);
+			name = DBFactory;
+			sourceTree = "<group>";
+		};
+		D4D4F67C19E609EB00DC85E6 /* Res */ = {
+			isa = PBXGroup;
+			children = (
+				D4D4F6CE19ECB11300DC85E6 /* iTunesDB.sqlite3 */,
+				D4D4F6C019E86CA000DC85E6 /* remove.png */,
+				D4D4F6B119E73E4500DC85E6 /* green_Background.jpg */,
+				D4DDDB1919D2857A00B72F23 /* Open.png */,
+				D4DDDB0519D27FC900B72F23 /* CurrentlyPlaying.png */,
+				D4DDDB0619D27FC900B72F23 /* Fwd.png */,
+				D4DDDB0719D27FC900B72F23 /* next.png */,
+				D4DDDB0819D27FC900B72F23 /* Pause.png */,
+				D4DDDB0919D27FC900B72F23 /* Play.png */,
+				D4DDDB0A19D27FC900B72F23 /* previous.png */,
+				D4DDDB0B19D27FC900B72F23 /* Rew.png */,
+				D4DDDB0C19D27FC900B72F23 /* Sound_Full.png */,
+				D4DDDB0D19D27FC900B72F23 /* Sound_Off.png */,
+				D4DDDB0E19D27FC900B72F23 /* Stop.png */,
+				D4DDDB0119D27C8A00B72F23 /* icons.icns */,
+			);
+			name = Res;
+			sourceTree = "<group>";
+		};
 		D4DDDAAE19D227E100B72F23 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +278,11 @@
 		D4DDDAB919D227E100B72F23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4E5BB9419D9079200FF81E8 /* libsqlite3.0.dylib */,
+				D4DDDB2119D28FF800B72F23 /* AVFoundation.framework */,
+				D4DDDB1F19D28FEA00B72F23 /* CoreAudioKit.framework */,
+				D4DDDB1D19D28FE400B72F23 /* CoreAudio.framework */,
+				D4DDDB1B19D28FDD00B72F23 /* AudioToolbox.framework */,
 				D4DDDABA19D227E100B72F23 /* Cocoa.framework */,
 				D4DDDADC19D227E100B72F23 /* XCTest.framework */,
 				D4DDDABC19D227E100B72F23 /* Other Frameworks */,
@@ -117,10 +303,13 @@
 		D4DDDAC019D227E100B72F23 /* iTunesKnockOff */ = {
 			isa = PBXGroup;
 			children = (
-				D4DDDACC19D227E100B72F23 /* AppDelegate.h */,
-				D4DDDACD19D227E100B72F23 /* AppDelegate.m */,
-				D4DDDACF19D227E100B72F23 /* MainMenu.xib */,
-				D4DDDAD519D227E100B72F23 /* Images.xcassets */,
+				D49745C91A155DB6000B6890 /* Helper */,
+				D4D4F67C19E609EB00DC85E6 /* Res */,
+				D4D4F67919E6098900DC85E6 /* Views */,
+				D4D4F67719E6095C00DC85E6 /* CustomViews */,
+				D4D4F67619E6094F00DC85E6 /* AppDelegate */,
+				D4D4F67519E6094000DC85E6 /* Controllers */,
+				D4D4F67419E6092A00DC85E6 /* Factory */,
 				D4DDDAD219D227E100B72F23 /* iTunesKnockOff.xcdatamodeld */,
 				D4DDDAC119D227E100B72F23 /* Supporting Files */,
 			);
@@ -234,9 +423,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4DDDAC519D227E100B72F23 /* InfoPlist.strings in Resources */,
-				D4DDDAD619D227E100B72F23 /* Images.xcassets in Resources */,
+				D4DDDB1719D27FC900B72F23 /* Sound_Off.png in Resources */,
+				D4DDDB0F19D27FC900B72F23 /* CurrentlyPlaying.png in Resources */,
+				D4DDDB1419D27FC900B72F23 /* previous.png in Resources */,
+				D4DDDB7F19D3425700B72F23 /* iTunesViewController.xib in Resources */,
 				D4DDDACB19D227E100B72F23 /* Credits.rtf in Resources */,
 				D4DDDAD119D227E100B72F23 /* MainMenu.xib in Resources */,
+				D4DDDB1619D27FC900B72F23 /* Sound_Full.png in Resources */,
+				D4DDDB1A19D2857A00B72F23 /* Open.png in Resources */,
+				D4B9E57519FBC24900FBAE8E /* MainWindowViewController.xib in Resources */,
+				D4D4F6C119E86CA000DC85E6 /* remove.png in Resources */,
+				D4DDDB1219D27FC900B72F23 /* Pause.png in Resources */,
+				D4DDDB1519D27FC900B72F23 /* Rew.png in Resources */,
+				D4D4F6CF19ECB11300DC85E6 /* iTunesDB.sqlite3 in Resources */,
+				D4DDDB1119D27FC900B72F23 /* next.png in Resources */,
+				D4DDDB1819D27FC900B72F23 /* Stop.png in Resources */,
+				D4B9E5A819FE430700FBAE8E /* iTunesWindowController.xib in Resources */,
+				D4DDDB1019D27FC900B72F23 /* Fwd.png in Resources */,
+				D4DDDB1319D27FC900B72F23 /* Play.png in Resources */,
+				D4DDDB0219D27C8A00B72F23 /* icons.icns in Resources */,
+				D4D4F6B219E73E4500DC85E6 /* green_Background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4DDDAE619D227E100B72F23 /* InfoPlist.strings in Resources */,
+				D4D4F6D019ECB11300DC85E6 /* iTunesDB.sqlite3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,8 +462,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4DDDB7E19D3425700B72F23 /* iTunesViewController.m in Sources */,
+				D4B9E5A719FE430700FBAE8E /* iTunesWindowController.m in Sources */,
+				D4D4F63E19E5422500DC85E6 /* CustomDrangNDropView.m in Sources */,
+				D49745CC1A1573DF000B6890 /* NSArrayHelper.m in Sources */,
+				D49745CF1A158549000B6890 /* ArraySortFactory.m in Sources */,
 				D4DDDACE19D227E100B72F23 /* AppDelegate.m in Sources */,
+				D4B9E57419FBC24900FBAE8E /* MainWindowViewController.m in Sources */,
 				D4DDDAD419D227E100B72F23 /* iTunesKnockOff.xcdatamodeld in Sources */,
+				D4D4F6AD19E6675700DC85E6 /* CustomDragnDropTableView.m in Sources */,
+				D4E5BB9319D9078400FF81E8 /* DBManager.m in Sources */,
+				D4DDDB2819D2BF5B00B72F23 /* SongData.m in Sources */,
 				D4DDDAC719D227E100B72F23 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,6 +609,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
 				INFOPLIST_FILE = "iTunesKnockOff/iTunesKnockOff-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -406,6 +623,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
 				INFOPLIST_FILE = "iTunesKnockOff/iTunesKnockOff-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -470,6 +688,7 @@
 				D4DDDAED19D227E100B72F23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D4DDDAEE19D227E100B72F23 /* Build configuration list for PBXNativeTarget "iTunesKnockOffTests" */ = {
 			isa = XCConfigurationList;
@@ -478,6 +697,7 @@
 				D4DDDAF019D227E100B72F23 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
