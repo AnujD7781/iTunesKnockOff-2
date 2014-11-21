@@ -42,13 +42,12 @@ THE SOFTWARE.
 -(void) draggingEnded:(id<NSDraggingInfo>)sender {
 }
 
-- (id)initWithFrame:(NSRect)frame
+- (instancetype)initWithFrame:(NSRect)frame
 {
     self = [super initWithFrame:frame];
     if (self)
     {
-        [self registerForDraggedTypes:[NSArray arrayWithObjects:
-                                       NSColorPboardType, NSFilenamesPboardType, nil]];
+        [self registerForDraggedTypes:@[NSColorPboardType, NSFilenamesPboardType]];
         NSLog(@"initWithFrame");
     }
     return self;
@@ -107,6 +106,7 @@ THE SOFTWARE.
         NSLog(@"%@",menuName);
         [submenu insertItemWithTitle:menuName action:@selector(addToPlaylist:) keyEquivalent:@"" atIndex:i];
         i++;
+        
     }
     
     [mainItem setSubmenu:submenu];

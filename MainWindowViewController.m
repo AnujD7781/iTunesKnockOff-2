@@ -39,14 +39,14 @@ THE SOFTWARE.
     _windowController = [[iTunesWindowController alloc]initWithWindowNibName:@"iTunesWindowController"];
 
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
         _musicPlayerController = [[iTunesViewController alloc]initWithNibName:@"iTunesViewController" bundle:nil];
         aryLibraryOutLn = [[NSMutableArray alloc]init];
-        [aryLibraryOutLn addObjectsFromArray:[NSArray arrayWithObjects:@"Library",@"Music", @"Playlist", nil]];
+        [aryLibraryOutLn addObjectsFromArray:@[@"Library",@"Music", @"Playlist"]];
         [aryLibraryOutLn addObjectsFromArray:[[DBManager getSharedInstance]getAllPlayListNames]];
         
         self.tblViewPlaylist.headerView.hidden = YES;
@@ -68,7 +68,7 @@ THE SOFTWARE.
     NSWindow *window = [_windowController window];
     [window makeKeyAndOrderFront:nil];
     //windowCtrl.viewController.currentController = @"Music";
-    [_windowController.viewController initWithPlayList:[aryLibraryOutLn objectAtIndex:[self.tblViewPlaylist selectedRow]]];
+    [_windowController.viewController initWithPlayList:aryLibraryOutLn[[self.tblViewPlaylist selectedRow]]];
     [_musicPlayerController initWithPlayList:@"Music"];
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:1];
     [self.tblViewPlaylist selectRowIndexes:indexSet byExtendingSelection:NO];
@@ -77,7 +77,7 @@ THE SOFTWARE.
 
 - (void)viewDidLoad {
     // Do view setup here.
-    [[splitView.subviews objectAtIndex:1] addSubview:_musicPlayerController.view];
+    [(splitView.subviews)[1] addSubview:_musicPlayerController.view];
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:1];
     [self.tblViewPlaylist selectRowIndexes:indexSet byExtendingSelection:NO];
     [_musicPlayerController initWithPlayList:@"Music"];
@@ -92,7 +92,7 @@ THE SOFTWARE.
 - (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row{
     
     NSTableCellView *result = nil;
-    if ([[aryLibraryOutLn objectAtIndex:row]isEqualToString:@"Library"] || [[aryLibraryOutLn objectAtIndex:row]isEqualToString:@"Playlist"]) {
+    if ([aryLibraryOutLn[row]isEqualToString:@"Library"] || [aryLibraryOutLn[row]isEqualToString:@"Playlist"]) {
         result = [tableView makeViewWithIdentifier:@"HeaderRow" owner:self];
     }
     else {
@@ -100,7 +100,7 @@ THE SOFTWARE.
     }
    // Item *item = [self.items objectAtIndex:row];
    // result.imageView.image = item.itemIcon;
-    result.textField.stringValue = [aryLibraryOutLn objectAtIndex:row];
+    result.textField.stringValue = aryLibraryOutLn[row];
     NSLog(@"%@",result.textField.stringValue);
     //result = [tableView makeViewWithIdentifier:@"HeaderCell" owner:self];
     //result.textField.objectValue = @"hello";
@@ -116,7 +116,7 @@ THE SOFTWARE.
     
     // row is the selected row
     // tableView is the table view where the selection occured
-    [_musicPlayerController initWithPlayList:[aryLibraryOutLn objectAtIndex:row] ];
+    [_musicPlayerController initWithPlayList:aryLibraryOutLn[row] ];
     return YES;
     
 }
@@ -144,7 +144,7 @@ THE SOFTWARE.
         }else {
             [[DBManager getSharedInstance]saveSongPlayListName:[input stringValue]];
             [aryLibraryOutLn removeAllObjects];
-            [aryLibraryOutLn addObjectsFromArray:[NSArray arrayWithObjects:@"Library",@"Music", @"Playlist", nil]];
+            [aryLibraryOutLn addObjectsFromArray:@[@"Library",@"Music", @"Playlist"]];
             [aryLibraryOutLn addObjectsFromArray:[[DBManager getSharedInstance]getAllPlayListNames]];
             [self.tblViewPlaylist reloadData];
             NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:[aryLibraryOutLn count]-1];
@@ -168,14 +168,14 @@ THE SOFTWARE.
    
     NSInteger button = [alert runModal];
     if (button == NSAlertDefaultReturn) {
-        NSLog(@"%@",[aryLibraryOutLn objectAtIndex:[self.tblViewPlaylist selectedRow]]);
-        if ([[aryLibraryOutLn objectAtIndex:[self.tblViewPlaylist selectedRow]] isNotEqualTo:@"PlayList" ]|| [[aryLibraryOutLn objectAtIndex:[self.tblViewPlaylist selectedRow]] isNotEqualTo:@"Music" ] || [[aryLibraryOutLn objectAtIndex:[self.tblViewPlaylist selectedRow]] isNotEqualTo:@"Library" ]) {
-            [[DBManager getSharedInstance]removePlayList:[aryLibraryOutLn objectAtIndex:[self.tblViewPlaylist selectedRow]]];
+        NSLog(@"%@",aryLibraryOutLn[[self.tblViewPlaylist selectedRow]]);
+        if ([aryLibraryOutLn[[self.tblViewPlaylist selectedRow]] isNotEqualTo:@"PlayList" ]|| [aryLibraryOutLn[[self.tblViewPlaylist selectedRow]] isNotEqualTo:@"Music" ] || [aryLibraryOutLn[[self.tblViewPlaylist selectedRow]] isNotEqualTo:@"Library" ]) {
+            [[DBManager getSharedInstance]removePlayList:aryLibraryOutLn[[self.tblViewPlaylist selectedRow]]];
         }
         
         
         [aryLibraryOutLn removeAllObjects];
-        [aryLibraryOutLn addObjectsFromArray:[NSArray arrayWithObjects:@"Library",@"Music", @"Playlist", nil]];
+        [aryLibraryOutLn addObjectsFromArray:@[@"Library",@"Music", @"Playlist"]];
         [aryLibraryOutLn addObjectsFromArray:[[DBManager getSharedInstance]getAllPlayListNames]];
         
         if (arrWindow.count > 0) {

@@ -1,6 +1,6 @@
 /*
-//  iTunesViewController.m
-//  iTunesKnockOff
+ iTunesViewController.m
+ iTunesKnockOff
 The MIT License (MIT)
 Copyright (c) 2014 Anuj Deshmukh (anuj.deshmukh7@gmail.com & www.linkedin.com/pub/anuj-deshmukh/17/16b/56a/)
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -48,18 +48,19 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     NSLog(@"awake from nib");
     //custTableView = (CustomDragnDropTableView*) self.tblViewPlaylist;
     [self.tblViewPlaylist reloadData];
+    [self.tblViewPlaylist setSortDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"" ascending:YES selector:@selector(caseInsensitiveCompare:)]]];
     [self.tblViewPlaylist setDoubleAction:@selector(doubleClick:)];
     
 }
 
 - (void)doubleClick: (id)sender {
     if (self.tblViewPlaylist.selectedRow != -1) {
-        SongData *songData =  [self.aryTracks objectAtIndex:[self.tblViewPlaylist selectedRow]];
+        SongData *songData =  (self.aryTracks)[[self.tblViewPlaylist selectedRow]];
         [self playerHandler:songData];
     }
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -94,7 +95,7 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     [self.tblViewPlaylist reloadData];
 }
 -(void) playSelectedSong:(id)sender {
-   SongData* songData  = [self.aryTracks objectAtIndex:(int)self.tblViewPlaylist.selectedRow];
+   SongData* songData  = (self.aryTracks)[(int)self.tblViewPlaylist.selectedRow];
     [self playerHandler:songData];
 }
 
@@ -107,7 +108,6 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     } else {
         [self.audioPlayer play];
     }
-    
    
 }
 - (IBAction)pauseTrack:(id)sender {
@@ -141,7 +141,12 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
 }
 - (IBAction)playNextTrack:(id)sender {
     //NSLog(@"next");
-    [self playerUserInputHandler:1];
+    if (!isShuffleChecked) {
+        [self playerUserInputHandler:1];
+    }else {
+        [self stopTrack:nil];
+    }
+    
 }
 - (IBAction)playPreviousTrack:(id)sender {
     //NSLog(@"prev");
@@ -149,8 +154,17 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
 }
 - (IBAction)stopTrack:(id)sender {
     //NSLog(@"stop");
-    [self.audioPlayer setCurrentTime:0];
-    [self.audioPlayer stop];
+   /* [self.audioPlayer setCurrentTime:0];
+    [self.audioPlayer stop];*/
+    isShuffleChecked = YES;
+    NSUInteger index = arc4random()%[self.aryTracks count];
+    NSIndexSet *indexSet1 = [NSIndexSet indexSetWithIndex:(int)index];
+    [self.tblViewPlaylist selectRowIndexes:indexSet1 byExtendingSelection:YES];
+    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:(int)index];
+    [self.tblViewPlaylist selectRowIndexes:indexSet byExtendingSelection:YES];
+    SongData  *randomIndex = (self.aryTracks)[index];
+    NSLog(@"%@",randomIndex.strTitle);
+    [self playerHandler:randomIndex];
 }
 - (void) sortByClm:(NSString*)sortDiscriptor {
     
@@ -163,7 +177,7 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     [panel setCanChooseFiles:YES];
     [panel setCanChooseDirectories:NO];
     [panel setAllowsMultipleSelection:YES]; // yes if more than one dir is allowed
-    [panel setAllowedFileTypes:[NSArray arrayWithObjects:@"mp3",nil]];
+    [panel setAllowedFileTypes:@[@"mp3"]];
     NSInteger clicked = [panel runModal];
     
     if (clicked == NSFileHandlingPanelOKButton) {
@@ -214,7 +228,7 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:(int)integer];
         [self.tblViewPlaylist selectRowIndexes:indexSet byExtendingSelection:NO];
         songData = nil;
-        songData  = [self.aryTracks objectAtIndex:(int)self.tblViewPlaylist.selectedRow];
+        songData  = (self.aryTracks)[(int)self.tblViewPlaylist.selectedRow];
         [self playerHandler:songData];
     } else if (idTrack == 2  ){
         NSInteger integer = (NSInteger)self.tblViewPlaylist.selectedRow;
@@ -222,7 +236,7 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:(int)integer];
         [self.tblViewPlaylist selectRowIndexes:indexSet byExtendingSelection:NO];
         songData = nil;
-        songData  = [self.aryTracks objectAtIndex:(int)self.tblViewPlaylist.selectedRow];
+        songData  = (self.aryTracks)[(int)self.tblViewPlaylist.selectedRow];
         [self playerHandler:songData];
     }
 }
@@ -231,9 +245,9 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     if (self.tblViewPlaylist.selectedRow != -1) {
         
         if ([self.currentController isEqualToString:@"Music"]) {
-            [[DBManager getSharedInstance] removeSongFromList:[self.aryTracks objectAtIndex:(int)self.tblViewPlaylist.selectedRow]];
+            [[DBManager getSharedInstance] removeSongFromList:(self.aryTracks)[(int)self.tblViewPlaylist.selectedRow]];
         } else {
-            [[DBManager getSharedInstance]removeSong:[self.aryTracks objectAtIndex:(int)self.tblViewPlaylist.selectedRow] fromPlayList:self.currentController];
+            [[DBManager getSharedInstance]removeSong:(self.aryTracks)[(int)self.tblViewPlaylist.selectedRow] fromPlayList:self.currentController];
         }
         
         [self.aryTracks removeObjectAtIndex:(int)self.tblViewPlaylist.selectedRow];
@@ -275,32 +289,28 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     [self.audioPlayer play];
 }
 - (IBAction)setVolumeFull:(id)sender {
-    //NSLog(@"full");
     self.volumeSlider.doubleValue = 1.0;
     [self.audioPlayer setVolume:1.0];
 }
 - (IBAction)setVolumeMute:(id)sender {
-    //NSLog(@"mute");
     self.volumeSlider.doubleValue = 0.0;
     [self.audioPlayer setVolume:0.0];
 }
 - (IBAction)sliderValue:(id)sender {
-    //NSLog(@"//NSLog");
     self.audioPlayer.currentTime = self.timeSlider.doubleValue;
 }
 - (IBAction)setVolumeForPlayer:(id)sender {
     [self.audioPlayer setVolume:self.volumeSlider.floatValue];
-    //self.timeSlider.doubleValue = self.audioPlayer.volume;
     
 }
+
 #pragma mark Controller Helper
-
-
 #pragma mark player helpers
 - (void)updateTime:(NSTimer *)timer {
     NSTimeInterval timeLeft = self.audioPlayer.duration - self.audioPlayer.currentTime;
+    NSTimeInterval timeElapsed=  self.audioPlayer.currentTime;
     NSTimeInterval timeTotal = self.audioPlayer.duration;
-    //NSLog(@"Player rate =------------------%f  -------------",self.audioPlayer.rate);
+    NSLog(@"Player rate =------------------%f,%f  -------------",timeLeft,timeTotal);
     
     // update your UI with timeLeft
 //self.lblTime = ;
@@ -308,11 +318,12 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     int min=timeLeft/60;
     int sec = lroundf(timeLeft) % 60;
     
-    int minTotal=timeTotal/60;
-    int secTotal = lroundf(timeTotal) % 60;
+    int minTotal=timeElapsed/60;
+    int secTotal = lroundf(timeElapsed) % 60;
     
     
-    [self.lblTime setStringValue:[NSString stringWithFormat:@"%d.%d - %d.%d ", min,sec,minTotal,secTotal]];
+    [self.lblTime setStringValue:[NSString stringWithFormat:@"%d.%d ", min,sec]];
+    [self.lblTimeCurrent setStringValue:[NSString stringWithFormat:@"%d.%d ", minTotal,secTotal]];
     timeSlider.doubleValue = self.audioPlayer.currentTime;
     if (self.audioPlayer.currentTime == self.audioPlayer.duration) {
         [self playNextTrack:nil];
@@ -334,7 +345,7 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
 }
 - (id<NSPasteboardWriting>)tableView:(NSTableView *)tableView pasteboardWriterForRow:(NSInteger)row {
     
-    SongData *data = [self.aryTracks objectAtIndex:row];
+    SongData *data = (self.aryTracks)[row];
     return data;
 }
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
@@ -347,7 +358,7 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     
     // populate each row of our table view with data
     // display a different value depending on each column (as identified in XIB)
-    SongData *songData = [self.aryTracks objectAtIndex:row];
+    SongData *songData = (self.aryTracks)[row];
 
     if ([tableColumn.identifier isEqualToString:@"Title"]) {
         return songData.strTitle;
@@ -378,13 +389,9 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     return @"";
 }
 -(BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)row{
-    
     // row is the selected row
     // tableView is the table view where the selection occured
-    //SongData* songData  = [self.aryTracks objectAtIndex:(int)row];
-    //[self playerHandler:songData];
     return YES;
-   
 }
 
 
@@ -419,7 +426,7 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
     [panel setCanChooseFiles:YES];
     [panel setCanChooseDirectories:NO];
     [panel setAllowsMultipleSelection:NO]; // yes if more than one dir is allowed
-    [panel setAllowedFileTypes:[NSArray arrayWithObjects:@"mp3",nil]];
+    [panel setAllowedFileTypes:@[@"mp3"]];
     NSInteger clicked = [panel runModal];
     
     if (clicked == NSFileHandlingPanelOKButton) {
@@ -434,10 +441,12 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
 }
 -(void) addSongToPlaylist:(NSString*)playListName {
     if ([self.tblViewPlaylist selectedRow]!=-1) {
-        SongData* songData  = [self.aryTracks objectAtIndex:self.tblViewPlaylist.selectedRow];
-        NSArray *arr = [NSArray arrayWithObjects:songData, nil];
+        SongData* songData  = (self.aryTracks)[self.tblViewPlaylist.selectedRow];
+        NSArray *arr = @[songData];
         [[DBManager getSharedInstance]saveSongInPlayList:arr withName:playListName];
     }
+    
 }
+
 
 @end

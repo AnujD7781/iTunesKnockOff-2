@@ -1,6 +1,6 @@
 /*
-//  iTunesViewController.h
-//  iTunesKnockOff
+  iTunesViewController.h
+  iTunesKnockOff
 The MIT License (MIT)
 Copyright (c) 2014 Anuj Deshmukh (anuj.deshmukh7@gmail.com & www.linkedin.com/pub/anuj-deshmukh/17/16b/56a/)
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -31,10 +31,13 @@ THE SOFTWARE.
 @interface iTunesViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, NSViewDragDelegate>  {
     CustomDrangNDropView *dragDropView;
     IBOutlet NSView *iTunesView;
+    BOOL isShuffleChecked ;
   
 }
 // Control outlets handlers.
 @property (strong) NSString *currentController;
+
+// IBOutlets properties for all objects.
 @property (weak) IBOutlet NSTextField *lblAlbum;
 @property (weak) IBOutlet NSTextField *lblSong;
 @property (weak) IBOutlet NSImageView *imgAlbum;
@@ -47,11 +50,15 @@ THE SOFTWARE.
 @property (nonatomic,strong) IBOutlet NSTableColumn *clmSinger;
 @property (nonatomic,strong) IBOutlet NSSlider *timeSlider;
 @property (weak) IBOutlet NSSlider *volumeSlider;
+@property (weak) IBOutlet NSTextField *lblTimeCurrent;
+
+
+// Player and player layer object
 @property (strong) AVPlayerLayer *playerLayer;
 @property (strong) AVAudioPlayer *audioPlayer;
 
 
-// Control Action Handlers.
+// IBAction for all control actions.
 - (IBAction)playTrack:(id)sender;
 - (IBAction)pauseTrack:(id)sender;
 - (IBAction)rewindTrack:(id)sender;
@@ -64,14 +71,16 @@ THE SOFTWARE.
 - (IBAction)setVolumeMute:(id)sender;
 - (IBAction)setVolumeForPlayer:(id)sender;
 - (IBAction)DeleteSongFromTable:(id)sender;
--(void) playSelectedSong:(id)sender;
 
 
-// Controller functions
+// Handlers and helper functions
 - (void) playerHandler:(SongData*)data;
 - (IBAction)sliderValue:(id)sender;
 -(void) initWithPlayList:(NSString*)playListName;
 -(void) openAsongFromLib;
+-(void) playSelectedSong:(id)sender;
+
+
 // Controller veriables
 @property (nonatomic,strong) NSMutableArray *aryTracks;
 @property (assign) double currentTime;

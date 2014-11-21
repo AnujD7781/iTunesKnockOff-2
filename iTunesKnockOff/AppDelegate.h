@@ -46,6 +46,12 @@ THE SOFTWARE.
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+- (IBAction)menuPlay:(id)sender;
+- (IBAction)menuNext:(id)sender;
+- (IBAction)menuPrevious:(id)sender;
+- (IBAction)menuIncreaseVol:(id)sender;
+- (IBAction)menuDecreaseVol:(id)sender;
 
+- (IBAction)menuMoveToCurrentSong:(id)sender;
 
 @end

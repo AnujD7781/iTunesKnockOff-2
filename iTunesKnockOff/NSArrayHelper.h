@@ -26,5 +26,6 @@ NSArrayHelper.h
 
 @interface NSMutableArray (Shuffling)
 - (void)shuffle;
+@property (NS_NONATOMIC_IOSONLY, getter=getRandomIndex, readonly) NSInteger randomIndex;
 
 @end

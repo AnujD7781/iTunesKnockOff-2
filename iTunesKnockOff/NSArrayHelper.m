@@ -37,6 +37,11 @@
     }
 }
 
+-(NSInteger)getRandomIndex {
+    NSUInteger randomIndex = (NSUInteger)floor(random()/RAND_MAX * [self count]);
+    return randomIndex;
+}
+
 
 
 

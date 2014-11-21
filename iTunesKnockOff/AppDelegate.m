@@ -22,6 +22,7 @@ THE SOFTWARE.
 
 #import "AppDelegate.h"
 #import "MainWindowViewController.h"
+#import "DBManager.h"
 @implementation AppDelegate
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -40,13 +41,14 @@ THE SOFTWARE.
     _mainView = [[MainWindowViewController alloc]init];
     [_MenuITEM setAlternate:YES];
     [_MenuITEM setEnabled:YES];
-
+   
+    NSMenu *mainMenu = [[NSApplication sharedApplication] mainMenu];
+    NSMenu *appMenu = [[mainMenu itemAtIndex:1] submenu];
+    
+    for (NSMenuItem *item in [appMenu itemArray]) {
+        NSLog(@"%@", [item title]);
+    }
     [self.window.contentView addSubview:_mainView.view];
-}
-
-- (void)windowClosing:(NSNotification*)aNotification {
-    // this method gets called when any window is closing
-    //[NSApp terminate:self];
 }
 
 - (void) closeapp: (id)sender {
@@ -75,5 +77,38 @@ THE SOFTWARE.
 
 - (IBAction)menuOpenInNewWindow:(id)sender {
     [_mainView doubleClick:nil];
+}
+- (IBAction)menuPlay:(id)sender {
+    [_mainView.musicPlayerController playTrack:nil];
+}
+
+- (IBAction)menuNext:(id)sender {
+    [_mainView.musicPlayerController playNextTrack:nil];
+}
+
+- (IBAction)menuPrevious:(id)sender {
+    [_mainView.musicPlayerController playPreviousTrack:nil];
+}
+
+- (IBAction)menuIncreaseVol:(id)sender {
+    float vol = _mainView.musicPlayerController.audioPlayer.volume;
+    if (vol < 1.0) {
+        [_mainView.musicPlayerController.audioPlayer setVolume:vol+0.05];
+        _mainView.musicPlayerController.volumeSlider.doubleValue=vol+0.05;
+        
+    }
+}
+
+- (IBAction)menuDecreaseVol:(id)sender {
+    float vol = _mainView.musicPlayerController.audioPlayer.volume;
+    if (vol > 0.0) {
+        [_mainView.musicPlayerController.audioPlayer setVolume:vol-0.05];
+        _mainView.musicPlayerController.volumeSlider.doubleValue=vol-0.05;
+        
+    }
+}
+
+- (IBAction)menuMoveToCurrentSong:(id)sender {
+    
 }
 @end

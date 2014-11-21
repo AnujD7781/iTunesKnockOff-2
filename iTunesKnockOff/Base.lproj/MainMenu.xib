@@ -17,6 +17,7 @@
                 <outlet property="customView" destination="EiT-Mj-1SZ" id="fCo-kM-vxf"/>
                 <outlet property="menuAddSongs" destination="Fcl-fu-BE5" id="qhL-wm-Dm5"/>
                 <outlet property="menuDeleteSongs" destination="njm-K3-F3X" id="vOw-KO-9o7"/>
+                <outlet property="menuFile" destination="4s7-u8-RLK" id="aWT-lW-dMo"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -86,9 +87,48 @@
                                     <action selector="OpenSong:" target="Voe-Tx-rLC" id="LfW-N4-Lim"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Delete Song" keyEquivalent="d" id="njm-K3-F3X">
+                            <menuItem title="Delete Song" keyEquivalent="r" id="njm-K3-F3X">
                                 <connections>
                                     <action selector="menuDeleteSongs:" target="Voe-Tx-rLC" id="OHt-NP-dV9"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Control" state="on" id="sf4-8k-Tva">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Control" id="fwZ-D6-DJe">
+                        <items>
+                            <menuItem title="Play" keyEquivalent=" " id="837-AS-9Gt">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="menuPlay:" target="Voe-Tx-rLC" id="K7P-4V-iyh"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Next" keyEquivalent="" id="HcO-wO-N63">
+                                <connections>
+                                    <action selector="menuNext:" target="Voe-Tx-rLC" id="kRL-Xm-gEa"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Previous" keyEquivalent="" id="qgv-jb-LcI">
+                                <connections>
+                                    <action selector="menuPrevious:" target="Voe-Tx-rLC" id="mOG-xh-pes"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Current Song" keyEquivalent="l" id="75U-u7-EEs">
+                                <connections>
+                                    <action selector="menuMoveToCurrentSong:" target="Voe-Tx-rLC" id="wzU-eb-tk8"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="tCH-8e-qu8"/>
+                            <menuItem title="Increase Vol" keyEquivalent="i" id="Vc3-tj-ncf">
+                                <connections>
+                                    <action selector="menuIncreaseVol:" target="Voe-Tx-rLC" id="PIU-3R-ScJ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Decrease Vol" keyEquivalent="d" id="Tzb-pp-VZq">
+                                <connections>
+                                    <action selector="menuDecreaseVol:" target="Voe-Tx-rLC" id="PpZ-gO-AQQ"/>
                                 </connections>
                             </menuItem>
                         </items>

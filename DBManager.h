@@ -29,10 +29,10 @@ THE SOFTWARE.
 }
 
 +(DBManager*)getSharedInstance;
--(BOOL)createDB;
+@property (NS_NONATOMIC_IOSONLY, readonly) BOOL createDB;
 -(BOOL) saveData:(NSArray*)arySongData;
 
--(NSArray*) getSongList;
+@property (NS_NONATOMIC_IOSONLY, getter=getSongList, readonly, copy) NSArray *songList;
 -(NSArray*) getPlaylistFor:(NSString*)playlistName;
 - (BOOL) removeSongFromList:(SongData*)songData ;
 -(BOOL) saveSongPlayListName:(NSString*)playListName;
@@ -40,5 +40,5 @@ THE SOFTWARE.
 
 - (BOOL) removeSong:(SongData*)songData fromPlayList:(NSString*)strPlayList;
 - (BOOL) removePlayList:(NSString*)playListName;
--(NSArray*) getAllPlayListNames;
+@property (NS_NONATOMIC_IOSONLY, getter=getAllPlayListNames, readonly, copy) NSArray *allPlayListNames;
 @end

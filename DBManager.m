@@ -186,7 +186,7 @@ static sqlite3_stmt *statement = nil;
     NSString *strSql;
     NSMutableArray *arrForLibrarySongs= [[NSMutableArray alloc]init];
     for (int i=0; i<[arrSongData count]; i++) {
-        SongData *songData = [arrSongData objectAtIndex:i];
+        SongData *songData = arrSongData[i];
         if (![self isSongPresentInTheLibrary:songData]) {
             [arrForLibrarySongs addObject:songData];
         }
@@ -206,7 +206,7 @@ static sqlite3_stmt *statement = nil;
                 // do things with addStmt, call sqlite3_step
                 int i;
                 for (i=0;i<[arrSongData count];i++) {
-                    SongData *songData = [arrSongData objectAtIndex:i];
+                    SongData *songData = arrSongData[i];
                 sqlite3_bind_int(statement, 1, 2);
                 sqlite3_bind_text(statement, 2, [playListName UTF8String], -1, SQLITE_TRANSIENT);
                 sqlite3_bind_text(statement, 3, [songData.strSongURL UTF8String], -1, SQLITE_TRANSIENT);
@@ -238,7 +238,7 @@ static sqlite3_stmt *statement = nil;
         } else {
             for (i=0;i<arySongData.count ;i++) {
                 
-                SongData *songData = [arySongData objectAtIndex:i];
+                SongData *songData = arySongData[i];
                 NSData *imgData = [songData.imgAlbum TIFFRepresentation];
                 sqlite3_bind_blob(statement, 1, [imgData bytes], (int)[imgData length], NULL);
                 sqlite3_bind_text(statement, 2, [songData.strAlbumName UTF8String], -1, SQLITE_TRANSIENT);
@@ -282,7 +282,7 @@ static sqlite3_stmt *statement = nil;
         } else {
     for (i=0;i<arySongData.count ;i++) {
         
-        SongData *songData = [arySongData objectAtIndex:i];
+        SongData *songData = arySongData[i];
         NSData *imgData = [songData.imgAlbum TIFFRepresentation];
         sqlite3_bind_blob(statement, 1, [imgData bytes], (int)[imgData length], NULL);
         sqlite3_bind_text(statement, 2, [songData.strAlbumName UTF8String], -1, SQLITE_TRANSIENT);

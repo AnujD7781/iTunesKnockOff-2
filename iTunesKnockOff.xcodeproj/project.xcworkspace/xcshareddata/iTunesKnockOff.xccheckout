@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>94CCB2A8-5B38-427C-BCA3-F1A77ECF90BC</string>
+	<key>IDESourceControlProjectName</key>
+	<string>iTunesKnockOff</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1A71A6724292AA1E8E6D96952583174B67B972EB</key>
+		<string>https://github.com/AnujDeshmukh/iTunesKnockOff-2.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>iTunesKnockOff.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1A71A6724292AA1E8E6D96952583174B67B972EB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/AnujDeshmukh/iTunesKnockOff-2.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1A71A6724292AA1E8E6D96952583174B67B972EB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1A71A6724292AA1E8E6D96952583174B67B972EB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iTunesKnockOff%202</string>
+		</dict>
+	</array>
+</dict>
+</plist>
