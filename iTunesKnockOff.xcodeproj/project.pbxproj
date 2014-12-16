@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D48BDE911A3D620400E8A235 /* MediaPlayerFlavor.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BDE901A3D620400E8A235 /* MediaPlayerFlavor.m */; };
+		D48BDE921A3D620400E8A235 /* MediaPlayerFlavor.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BDE901A3D620400E8A235 /* MediaPlayerFlavor.m */; };
+		D48BDE951A3D7C7B00E8A235 /* NSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BDE941A3D7C7B00E8A235 /* NSStringHelper.m */; };
+		D48BDE961A3D7C7B00E8A235 /* NSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BDE941A3D7C7B00E8A235 /* NSStringHelper.m */; };
 		D49745CC1A1573DF000B6890 /* NSArrayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D49745CB1A1573DF000B6890 /* NSArrayHelper.m */; };
 		D49745CF1A158549000B6890 /* ArraySortFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D49745CE1A158549000B6890 /* ArraySortFactory.m */; };
 		D4B9E57419FBC24900FBAE8E /* MainWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E57219FBC24900FBAE8E /* MainWindowViewController.m */; };
@@ -51,6 +55,9 @@
 		D4DDDB7F19D3425700B72F23 /* iTunesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4DDDB7D19D3425700B72F23 /* iTunesViewController.xib */; };
 		D4E5BB9319D9078400FF81E8 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D4E5BB9219D9078400FF81E8 /* DBManager.m */; };
 		D4E5BB9519D9079200FF81E8 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E5BB9419D9079200FF81E8 /* libsqlite3.0.dylib */; };
+		D4EB3DD81A26D2BF004834A8 /* NSTableColumnManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EB3DD71A26D2BF004834A8 /* NSTableColumnManagerView.m */; };
+		D4EB3DDB1A26D797004834A8 /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EB3DDA1A26D797004834A8 /* Column.m */; };
+		D4EB3DDC1A26D797004834A8 /* Column.m in Sources */ = {isa = PBXBuildFile; fileRef = D4EB3DDA1A26D797004834A8 /* Column.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +71,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D4505EE71A23AD4C00A0C902 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D4505EE91A23AD5500A0C902 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D48BDE8F1A3D620400E8A235 /* MediaPlayerFlavor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MediaPlayerFlavor.h; sourceTree = "<group>"; };
+		D48BDE901A3D620400E8A235 /* MediaPlayerFlavor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MediaPlayerFlavor.m; sourceTree = "<group>"; };
+		D48BDE931A3D7C7B00E8A235 /* NSStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringHelper.h; sourceTree = "<group>"; };
+		D48BDE941A3D7C7B00E8A235 /* NSStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringHelper.m; sourceTree = "<group>"; };
 		D49745CA1A1573DF000B6890 /* NSArrayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayHelper.h; sourceTree = "<group>"; };
 		D49745CB1A1573DF000B6890 /* NSArrayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayHelper.m; sourceTree = "<group>"; };
 		D49745CD1A158549000B6890 /* ArraySortFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArraySortFactory.h; sourceTree = "<group>"; };
@@ -124,6 +137,10 @@
 		D4E5BB9119D9078400FF81E8 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DBManager.h; path = ../DBManager.h; sourceTree = "<group>"; };
 		D4E5BB9219D9078400FF81E8 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DBManager.m; path = ../DBManager.m; sourceTree = "<group>"; };
 		D4E5BB9419D9079200FF81E8 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		D4EB3DD61A26D2BF004834A8 /* NSTableColumnManagerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSTableColumnManagerView.h; sourceTree = "<group>"; };
+		D4EB3DD71A26D2BF004834A8 /* NSTableColumnManagerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSTableColumnManagerView.m; sourceTree = "<group>"; };
+		D4EB3DD91A26D797004834A8 /* Column.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Column.h; sourceTree = "<group>"; };
+		D4EB3DDA1A26D797004834A8 /* Column.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Column.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +174,8 @@
 			children = (
 				D49745CA1A1573DF000B6890 /* NSArrayHelper.h */,
 				D49745CB1A1573DF000B6890 /* NSArrayHelper.m */,
+				D48BDE931A3D7C7B00E8A235 /* NSStringHelper.h */,
+				D48BDE941A3D7C7B00E8A235 /* NSStringHelper.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -164,10 +183,13 @@
 		D4D4F67419E6092A00DC85E6 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				D4D4F67B19E609AF00DC85E6 /* DBFactory */,
 				D4D4F67A19E609A100DC85E6 /* SongFactory */,
 				D49745CD1A158549000B6890 /* ArraySortFactory.h */,
 				D49745CE1A158549000B6890 /* ArraySortFactory.m */,
+				D4EB3DD91A26D797004834A8 /* Column.h */,
+				D4EB3DDA1A26D797004834A8 /* Column.m */,
+				D48BDE8F1A3D620400E8A235 /* MediaPlayerFlavor.h */,
+				D48BDE901A3D620400E8A235 /* MediaPlayerFlavor.m */,
 			);
 			name = Factory;
 			sourceTree = "<group>";
@@ -201,6 +223,8 @@
 				D4D4F63D19E5422500DC85E6 /* CustomDrangNDropView.m */,
 				D4D4F6AB19E6675700DC85E6 /* CustomDragnDropTableView.h */,
 				D4D4F6AC19E6675700DC85E6 /* CustomDragnDropTableView.m */,
+				D4EB3DD61A26D2BF004834A8 /* NSTableColumnManagerView.h */,
+				D4EB3DD71A26D2BF004834A8 /* NSTableColumnManagerView.m */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -225,13 +249,13 @@
 			name = SongFactory;
 			sourceTree = "<group>";
 		};
-		D4D4F67B19E609AF00DC85E6 /* DBFactory */ = {
+		D4D4F67B19E609AF00DC85E6 /* DBManager */ = {
 			isa = PBXGroup;
 			children = (
 				D4E5BB9119D9078400FF81E8 /* DBManager.h */,
 				D4E5BB9219D9078400FF81E8 /* DBManager.m */,
 			);
-			name = DBFactory;
+			name = DBManager;
 			sourceTree = "<group>";
 		};
 		D4D4F67C19E609EB00DC85E6 /* Res */ = {
@@ -278,6 +302,8 @@
 		D4DDDAB919D227E100B72F23 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D4505EE91A23AD5500A0C902 /* Security.framework */,
+				D4505EE71A23AD4C00A0C902 /* SystemConfiguration.framework */,
 				D4E5BB9419D9079200FF81E8 /* libsqlite3.0.dylib */,
 				D4DDDB2119D28FF800B72F23 /* AVFoundation.framework */,
 				D4DDDB1F19D28FEA00B72F23 /* CoreAudioKit.framework */,
@@ -303,6 +329,7 @@
 		D4DDDAC019D227E100B72F23 /* iTunesKnockOff */ = {
 			isa = PBXGroup;
 			children = (
+				D4D4F67B19E609AF00DC85E6 /* DBManager */,
 				D49745C91A155DB6000B6890 /* Helper */,
 				D4D4F67C19E609EB00DC85E6 /* Res */,
 				D4D4F67919E6098900DC85E6 /* Views */,
@@ -463,11 +490,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4DDDB7E19D3425700B72F23 /* iTunesViewController.m in Sources */,
+				D4EB3DD81A26D2BF004834A8 /* NSTableColumnManagerView.m in Sources */,
 				D4B9E5A719FE430700FBAE8E /* iTunesWindowController.m in Sources */,
+				D48BDE951A3D7C7B00E8A235 /* NSStringHelper.m in Sources */,
 				D4D4F63E19E5422500DC85E6 /* CustomDrangNDropView.m in Sources */,
 				D49745CC1A1573DF000B6890 /* NSArrayHelper.m in Sources */,
 				D49745CF1A158549000B6890 /* ArraySortFactory.m in Sources */,
 				D4DDDACE19D227E100B72F23 /* AppDelegate.m in Sources */,
+				D4EB3DDB1A26D797004834A8 /* Column.m in Sources */,
+				D48BDE911A3D620400E8A235 /* MediaPlayerFlavor.m in Sources */,
 				D4B9E57419FBC24900FBAE8E /* MainWindowViewController.m in Sources */,
 				D4DDDAD419D227E100B72F23 /* iTunesKnockOff.xcdatamodeld in Sources */,
 				D4D4F6AD19E6675700DC85E6 /* CustomDragnDropTableView.m in Sources */,
@@ -482,6 +513,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4DDDAE819D227E100B72F23 /* iTunesKnockOffTests.m in Sources */,
+				D4EB3DDC1A26D797004834A8 /* Column.m in Sources */,
+				D48BDE921A3D620400E8A235 /* MediaPlayerFlavor.m in Sources */,
+				D48BDE961A3D7C7B00E8A235 /* NSStringHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -609,6 +643,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
 				INFOPLIST_FILE = "iTunesKnockOff/iTunesKnockOff-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iTunesKnockOff/Flurry",
+					"$(PROJECT_DIR)/iTunesKnockOff/ObjC",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -623,6 +662,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
 				INFOPLIST_FILE = "iTunesKnockOff/iTunesKnockOff-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iTunesKnockOff/Flurry",
+					"$(PROJECT_DIR)/iTunesKnockOff/ObjC",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -645,6 +689,11 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "iTunesKnockOffTests/iTunesKnockOffTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iTunesKnockOff/Flurry",
+					"$(PROJECT_DIR)/iTunesKnockOff/ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -663,6 +712,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iTunesKnockOff/iTunesKnockOff-Prefix.pch";
 				INFOPLIST_FILE = "iTunesKnockOffTests/iTunesKnockOffTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/iTunesKnockOff/Flurry",
+					"$(PROJECT_DIR)/iTunesKnockOff/ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

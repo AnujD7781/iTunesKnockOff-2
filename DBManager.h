@@ -23,6 +23,7 @@ THE SOFTWARE.
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
 #import "SongData.h"
+#import "Column.h"
 
 @interface DBManager : NSObject {
     NSString *databasePath;
@@ -34,11 +35,19 @@ THE SOFTWARE.
 
 @property (NS_NONATOMIC_IOSONLY, getter=getSongList, readonly, copy) NSArray *songList;
 -(NSArray*) getPlaylistFor:(NSString*)playlistName;
+-(NSArray*) getAllColumn;
+-(NSArray*) getRecentlyPlayedSongs ;
+
+- (BOOL)changeStateForColumn:(Column*)clm;
+
 - (BOOL) removeSongFromList:(SongData*)songData ;
 -(BOOL) saveSongPlayListName:(NSString*)playListName;
 -(BOOL) saveSongInPlayList:(NSArray*)arrSongData withName:(NSString*)playListName;
+- (BOOL) addRecentlyPlayedSong:(SongData*)songdData;
 
 - (BOOL) removeSong:(SongData*)songData fromPlayList:(NSString*)strPlayList;
 - (BOOL) removePlayList:(NSString*)playListName;
+- (BOOL) lastSelectedColumn:(Column*)clm forPlayList:(NSString*)playList;
+
 @property (NS_NONATOMIC_IOSONLY, getter=getAllPlayListNames, readonly, copy) NSArray *allPlayListNames;
 @end

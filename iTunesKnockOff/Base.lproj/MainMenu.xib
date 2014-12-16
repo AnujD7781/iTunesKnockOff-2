@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6250"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6254"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -18,6 +18,9 @@
                 <outlet property="menuAddSongs" destination="Fcl-fu-BE5" id="qhL-wm-Dm5"/>
                 <outlet property="menuDeleteSongs" destination="njm-K3-F3X" id="vOw-KO-9o7"/>
                 <outlet property="menuFile" destination="4s7-u8-RLK" id="aWT-lW-dMo"/>
+                <outlet property="menuItemAdd" destination="Zkl-Vd-TZR" id="NS8-lP-1KD"/>
+                <outlet property="menuRepeat" destination="Qwj-CL-HTc" id="8hl-vZ-iV2"/>
+                <outlet property="menuShuffle" destination="5lZ-Ek-3nt" id="vOH-8g-XMa"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
         </customObject>
@@ -73,21 +76,25 @@
                     <menu key="submenu" title="File" id="kLo-0Q-imQ">
                         <items>
                             <menuItem title="Add Song" keyEquivalent="a" id="Fcl-fu-BE5">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="menuAddSongs:" target="Voe-Tx-rLC" id="LKn-uw-WYT"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Create Playlist" keyEquivalent="p" id="4IT-xQ-ybD">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="menuAddPlaylist:" target="Voe-Tx-rLC" id="wP9-uf-fwM"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Open a Song" keyEquivalent="o" id="eBy-Z1-2N3">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="OpenSong:" target="Voe-Tx-rLC" id="LfW-N4-Lim"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Delete Song" keyEquivalent="r" id="njm-K3-F3X">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="menuDeleteSongs:" target="Voe-Tx-rLC" id="OHt-NP-dV9"/>
                                 </connections>
@@ -106,29 +113,57 @@
                                 </connections>
                             </menuItem>
                             <menuItem title="Next" keyEquivalent="" id="HcO-wO-N63">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="menuNext:" target="Voe-Tx-rLC" id="kRL-Xm-gEa"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Previous" keyEquivalent="" id="qgv-jb-LcI">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="menuPrevious:" target="Voe-Tx-rLC" id="mOG-xh-pes"/>
                                 </connections>
                             </menuItem>
+                            <menuItem title="Play Recent" id="Zkl-Vd-TZR">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Play Recent" id="usl-bJ-rlp">
+                                    <items>
+                                        <menuItem title="Item" id="meO-0D-VCo">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                             <menuItem title="Current Song" keyEquivalent="l" id="75U-u7-EEs">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="menuMoveToCurrentSong:" target="Voe-Tx-rLC" id="wzU-eb-tk8"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="tCH-8e-qu8"/>
                             <menuItem title="Increase Vol" keyEquivalent="i" id="Vc3-tj-ncf">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="menuIncreaseVol:" target="Voe-Tx-rLC" id="PIU-3R-ScJ"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Decrease Vol" keyEquivalent="d" id="Tzb-pp-VZq">
+                                <modifierMask key="keyEquivalentModifierMask" control="YES"/>
                                 <connections>
                                     <action selector="menuDecreaseVol:" target="Voe-Tx-rLC" id="PpZ-gO-AQQ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="ecI-VU-rnH"/>
+                            <menuItem title="Shuffle" id="5lZ-Ek-3nt">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="shuffleAction:" target="Voe-Tx-rLC" id="9BQ-vt-cFh"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Repeat" id="Qwj-CL-HTc">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="repeatAction:" target="Voe-Tx-rLC" id="UlM-L6-Hsv"/>
                                 </connections>
                             </menuItem>
                         </items>
@@ -139,14 +174,15 @@
         <window title="iTunesKnockOff" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="343" y="211" width="818" height="415"/>
+            <rect key="contentRect" x="343" y="211" width="818" height="523"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
-            <value key="minSize" type="size" width="818" height="415"/>
-            <value key="maxSize" type="size" width="818" height="415"/>
+            <value key="minSize" type="size" width="818" height="523"/>
+            <value key="maxSize" type="size" width="818" height="523"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="818" height="415"/>
+                <rect key="frame" x="0.0" y="0.0" width="818" height="523"/>
                 <autoresizingMask key="autoresizingMask"/>
             </view>
         </window>
+        <customCell alignment="left" id="ZN1-uE-WKj"/>
     </objects>
 </document>

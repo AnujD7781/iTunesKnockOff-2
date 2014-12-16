@@ -21,7 +21,7 @@ THE SOFTWARE.
 */
 
 #import "SongData.h"
-
+#import "NSStringHelper.h"
 
 
 
@@ -79,16 +79,8 @@ THE SOFTWARE.
                 
         CMTime audioDuration = songData.songAsset.duration;
         float audioDurationSeconds = CMTimeGetSeconds(audioDuration);
-        songData.strTime = [NSString stringWithFormat:@"%f",audioDurationSeconds];
-        int minTotal=audioDurationSeconds/60;
-        int secTotal = lroundf(audioDurationSeconds) % 60;
-        
-        
-        songData.strTime = [NSString stringWithFormat:@"%d.%d ",minTotal,secTotal];
-        
-        
-        
-        if ([key isEqualToString:@"artwork"]){
+        songData.strTime = [NSString stringFromTimeInterval:(NSTimeInterval)audioDurationSeconds];
+     if ([key isEqualToString:@"artwork"]){
             NSImage *img = nil;
             if ([metadataItem.keySpace isEqualToString:AVMetadataKeySpaceiTunes]) {
                 img = [[NSImage alloc]initWithData:[metadataItem.value copyWithZone:nil]];
@@ -121,7 +113,6 @@ THE SOFTWARE.
             songData.strArtist = [NSString stringWithString:value];
         }
     }
-    
     return songData;
     
 }

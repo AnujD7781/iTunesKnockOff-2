@@ -71,6 +71,7 @@ THE SOFTWARE.
 - (IBAction)setVolumeMute:(id)sender;
 - (IBAction)setVolumeForPlayer:(id)sender;
 - (IBAction)DeleteSongFromTable:(id)sender;
+- (IBAction)goToCurrentPlayingSong:(id)sender;
 
 
 // Handlers and helper functions
@@ -79,7 +80,7 @@ THE SOFTWARE.
 -(void) initWithPlayList:(NSString*)playListName;
 -(void) openAsongFromLib;
 -(void) playSelectedSong:(id)sender;
-
+- (void)refreshiTunesViewController;
 
 // Controller veriables
 @property (nonatomic,strong) NSMutableArray *aryTracks;

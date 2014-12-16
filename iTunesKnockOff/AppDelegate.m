@@ -23,6 +23,8 @@ THE SOFTWARE.
 #import "AppDelegate.h"
 #import "MainWindowViewController.h"
 #import "DBManager.h"
+#import "MediaPlayerFlavor.h"
+
 @implementation AppDelegate
 
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -42,15 +44,45 @@ THE SOFTWARE.
     [_MenuITEM setAlternate:YES];
     [_MenuITEM setEnabled:YES];
    
-    NSMenu *mainMenu = [[NSApplication sharedApplication] mainMenu];
-    NSMenu *appMenu = [[mainMenu itemAtIndex:1] submenu];
-    
-    for (NSMenuItem *item in [appMenu itemArray]) {
-        NSLog(@"%@", [item title]);
+    if ([MediaPlayerFlavor isShuffleSelected]) {
+        [self.menuShuffle setState:1];
     }
+    if ([MediaPlayerFlavor isSRepeatSelected]) {
+        [self.menuRepeat setState:1];
+    }
+    arrRecentSongs = [[NSMutableArray alloc]init];
+    
+    [self createRecentlyAddedSongMenu];
     [self.window.contentView addSubview:_mainView.view];
 }
 
+- (void) createRecentlyAddedSongMenu {
+    [arrRecentSongs removeAllObjects];
+    [arrRecentSongs addObjectsFromArray:[[DBManager getSharedInstance] getRecentlyPlayedSongs]];
+    
+    NSMenu *submenu = [[NSMenu alloc] init];
+    int i=0;
+    for (SongData *menuName in arrRecentSongs ) {
+        
+        NSLog(@"%@",menuName);
+        [submenu insertItemWithTitle:menuName.strTitle action:@selector(recentSongSelected:) keyEquivalent:@"" atIndex:i];
+        i++;
+        
+    }
+    [_menuItemAdd setSubmenu:submenu];
+}
+
+- (IBAction)recentSongSelected:(id)sender {
+    NSMenu *submenu = (NSMenu*)sender;
+    NSLog(@"%@",[submenu title]);
+    for (SongData *data in arrRecentSongs) {
+        if ([data.strTitle isEqualToString:[submenu title]]) {
+            [_mainView.musicPlayerController playerHandler:data];
+            break;
+        }
+    }
+    
+}
 - (void) closeapp: (id)sender {
     [NSApp terminate:self];
 }
@@ -71,7 +103,6 @@ THE SOFTWARE.
 }
 
 - (IBAction)menuDeletePlaylist:(id)sender {
-    NSLog(@"hi I am here");
     [_mainView deleteSelectedPlaylist];
 }
 
@@ -109,6 +140,24 @@ THE SOFTWARE.
 }
 
 - (IBAction)menuMoveToCurrentSong:(id)sender {
+    [_mainView.musicPlayerController goToCurrentPlayingSong:nil];
     
+}
+- (IBAction)shuffleAction:(id)sender {
+    [MediaPlayerFlavor changeShuffleStatus];
+    if ([MediaPlayerFlavor isShuffleSelected]) {
+        [self.menuShuffle setState:1];
+    } else {
+        [self.menuShuffle setState:0];
+    }
+}
+
+- (IBAction)repeatAction:(id)sender {
+    [MediaPlayerFlavor changeRepeatStatus];
+    if ([MediaPlayerFlavor isSRepeatSelected]) {
+        [self.menuRepeat setState:1];
+    } else {
+        [self.menuRepeat setState:0];
+    }
 }
 @end

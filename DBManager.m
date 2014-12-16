@@ -21,6 +21,8 @@ THE SOFTWARE.
 */
 
 #import "DBManager.h"
+#import "AppDelegate.h"
+
 static DBManager *sharedInstance = nil;
 static sqlite3 *database = nil;
 static sqlite3_stmt *statement = nil;
@@ -53,6 +55,43 @@ static sqlite3_stmt *statement = nil;
     return YES;
 }
 
+-(NSArray*) getAllColumn {
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    
+    NSString *query = @"SELECT Column, State from Column";
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
+    {
+        if(sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, NULL) != SQLITE_OK)
+        {
+            NSAssert1(0, @"Error while creating add statement. '%s'", sqlite3_errmsg(database));
+        } else {
+            // do things with addStmt, call sqlite3_step
+            NSLog(@"its under it");
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                //int uniqueId = sqlite3_column_int(statement, 0);
+                char *nameChars = (char *) sqlite3_column_text(statement, 0);
+                NSString *name = [[NSString alloc] initWithUTF8String:nameChars];
+                char *state = (char *) sqlite3_column_text(statement, 1);
+                NSString *stateStr = [[NSString alloc] initWithUTF8String:state];
+                BOOL stateBool;
+                if ([stateStr isEqualToString:@"ON"]) {
+                    stateBool = YES;
+                } else {
+                    stateBool = NO;
+                }
+                Column *clm = [Column initWithColumn:name withState:stateBool];
+                
+                [arr addObject:clm];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(database);
+    }
+    
+    return arr;
+}
 -(NSArray*) getAllPlayListNames {
     NSMutableArray *arr = [[NSMutableArray alloc]init];
     
@@ -148,6 +187,37 @@ static sqlite3_stmt *statement = nil;
     return arr;
 }
 
+-(NSArray*) getRecentlyPlayedSongs {
+    
+    NSMutableArray *arr = [[NSMutableArray alloc]init];
+    NSString *query =[NSString stringWithFormat:@"SELECT distinct RecentSongURL from RecentSongs"];
+    sqlite3_stmt *statement;
+    
+    if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
+    {
+        if(sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, NULL) != SQLITE_OK)
+        {
+            NSAssert1(0, @"Error while creating add statement. '%s'", sqlite3_errmsg(database));
+        } else {
+            // do things with addStmt, call sqlite3_step
+            NSLog(@"its under it");
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                //int uniqueId = sqlite3_column_int(statement, 0);
+                char *nameChars = (char *) sqlite3_column_text(statement, 0);
+                NSString *srtURL = [[NSString alloc] initWithUTF8String:nameChars];
+                SongData *data = [SongData initWithSongURL:[NSURL URLWithString:srtURL]];
+                [arr addObject:data];
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(database);
+    }
+    if ([arr count]>10) {
+        return  [arr subarrayWithRange:NSMakeRange(([arr count]-10), 10)];
+    }
+    return arr;
+}
+
 
 -(BOOL) saveSongPlayListName:(NSString*)playListName {
     
@@ -223,6 +293,39 @@ static sqlite3_stmt *statement = nil;
     
     return NO;
 }
+
+- (BOOL) addRecentlyPlayedSong:(SongData*)songdData {
+    NSString *strSql;
+    if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
+    {
+        strSql = @"INSERT INTO RecentSongs (RecentSongURL) VALUES(?)";
+        
+        if(sqlite3_prepare_v2(database, [strSql UTF8String], -1, &statement, NULL) != SQLITE_OK)
+        {
+            NSAssert1(0, @"Error while creating add statement. '%s'", sqlite3_errmsg(database));
+        } else {
+            // do things with addStmt, call sqlite3_step
+            sqlite3_bind_text(statement, 1, [songdData.strSongURL UTF8String], -1, SQLITE_TRANSIENT);
+            if(SQLITE_DONE != sqlite3_step(statement)) {
+                NSAssert1(0, @"Error while inserting data. '%s'", sqlite3_errmsg(database));
+                NSLog(@"Error inserting data");
+                return NO;
+                
+            }
+            else {
+                NSLog(@"It worked properly");
+                sqlite3_reset(statement);
+                statement = nil;
+                AppDelegate *appDelegate = (AppDelegate*) [[NSApplication sharedApplication]delegate];
+                [appDelegate createRecentlyAddedSongMenu];
+                return YES;
+            }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(database);
+    }
+    return NO;
+}
 -(BOOL) saveSongDataIntoLibrary:(NSArray*)arySongData {
     // Build the path to the database file
     BOOL saveStatus;
@@ -262,9 +365,6 @@ static sqlite3_stmt *statement = nil;
             }
         }
     }
-    
-    
-    
     return YES;
 }
 -(BOOL) saveData:(NSArray*)arySongData {
@@ -413,4 +513,63 @@ static sqlite3_stmt *statement = nil;
     return isPresent;
 }
 
+
+- (BOOL) lastSelectedColumn:(Column*)clm forPlayList:(NSString*)playList {
+    NSString *strSql;
+    strSql = @"UPDATE playlist set SortedField = ? where playListName = ?";
+    
+    if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
+    {
+        if(sqlite3_prepare_v2(database, [strSql UTF8String], -1, &statement, NULL) != SQLITE_OK)
+        {
+            NSAssert1(0, @"Error while creating add statement. '%s'", sqlite3_errmsg(database));
+        } else {
+                sqlite3_bind_text(statement, 1, [clm.strColumn UTF8String], -1, SQLITE_TRANSIENT);
+                sqlite3_bind_text(statement, 2, [playList UTF8String], -1, SQLITE_TRANSIENT);
+
+            if (sqlite3_step(statement) == SQLITE_DONE) {
+                sqlite3_finalize(statement);
+            }
+        }
+    }
+    return NO;
+}
+
+- (BOOL)changeStateForColumn:(Column*)clm {
+  
+    NSString *strSql;
+    BOOL isChangedToOn;
+    strSql = @"UPDATE Column set State = ? where Column = ?";
+    
+    if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK)
+    {
+        if(sqlite3_prepare_v2(database, [strSql UTF8String], -1, &statement, NULL) != SQLITE_OK)
+        {
+            NSAssert1(0, @"Error while creating add statement. '%s'", sqlite3_errmsg(database));
+        } else {
+            
+            if (clm.State) {
+                sqlite3_bind_text(statement, 1, [@"OFF" UTF8String], -1, SQLITE_TRANSIENT);
+            }
+            else {
+                sqlite3_bind_text(statement, 1, [@"ON" UTF8String], -1, SQLITE_TRANSIENT);
+                isChangedToOn   = YES;
+            }
+            sqlite3_bind_text(statement, 2, [clm.strColumn UTF8String], -1, SQLITE_TRANSIENT);
+                if (sqlite3_step(statement) == SQLITE_DONE) {
+                        sqlite3_finalize(statement);
+                    }
+        }
+    }
+    
+    if (isChangedToOn) {
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setObject:clm.strColumn forKey:@"lastValue"];
+        [prefs synchronize];
+
+    }
+    return YES;
+}
+
 @end
+

@@ -23,5 +23,5 @@ THE SOFTWARE.
 #import <Foundation/Foundation.h>
 
 @interface ArraySortFactory : NSObject
-+(NSArray*) arraySortedArray:(NSArray*)arr WithDiscriptor:(NSString*)strDiscriptor;
++(NSArray*) arraySortedArray:(NSArray*)arr;
 @end

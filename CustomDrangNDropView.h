@@ -36,6 +36,7 @@
 -(void) addToPlaylist : (id)sender;
 @property(retain) NSColor *background;
 @end
+
 @protocol NSViewDragDelegate
 @required
 - (void)didReceiveDraggedFilesIntoView:(NSArray*)songURL;

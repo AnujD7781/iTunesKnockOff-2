@@ -23,7 +23,9 @@ THE SOFTWARE.
 #import <Cocoa/Cocoa.h>
 #import "iTunesViewController.h"
 #import "MainWindowViewController.h"
-@interface AppDelegate : NSObject <NSApplicationDelegate> 
+@interface AppDelegate : NSObject <NSApplicationDelegate> {
+    NSMutableArray *arrRecentSongs;
+}
 @property (weak) IBOutlet NSMenuItem *MenuITEM;
 @property (weak) IBOutlet NSMenuItem *menuAddSongs;
 @property (weak) IBOutlet NSMenuItem *menuDeleteSongs;
@@ -44,6 +46,14 @@ THE SOFTWARE.
 - (IBAction)menuOpenInNewWindow:(id)sender;
 
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property (weak) IBOutlet NSMenuItem *menuItemAdd;
+@property (weak) IBOutlet NSMenuItem *menuRepeat;
+- (IBAction)shuffleAction:(id)sender;
+- (IBAction)repeatAction:(id)sender;
+- (void) createRecentlyAddedSongMenu;
+@property (weak) IBOutlet NSMenuItem *menuShuffle;
+
+
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 - (IBAction)menuPlay:(id)sender;

@@ -39,8 +39,7 @@ THE SOFTWARE.
     _windowController = [[iTunesWindowController alloc]initWithWindowNibName:@"iTunesWindowController"];
 
 }
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
+- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
@@ -51,16 +50,20 @@ THE SOFTWARE.
         
         self.tblViewPlaylist.headerView.hidden = YES;
         
+        
     }
     return self;
 }
+
+- (void) refreshiTunesViewController {
+    [_musicPlayerController refreshiTunesViewController];
+}
+
 - (void)doubleClick: (id)sender {
     arrWindow = [[NSMutableArray alloc]init];
     
     
-    if (_windowController) {
-       [arrWindow addObject:_windowController];
-    }
+    
     _windowController = [[iTunesWindowController alloc]initWithWindowNibName:@"iTunesWindowController"];
     [_windowController showWindow:self];
     [[_windowController window] makeKeyAndOrderFront:self];
@@ -72,6 +75,9 @@ THE SOFTWARE.
     [_musicPlayerController initWithPlayList:@"Music"];
     NSIndexSet *indexSet = [NSIndexSet indexSetWithIndex:1];
     [self.tblViewPlaylist selectRowIndexes:indexSet byExtendingSelection:NO];
+    if (_windowController) {
+        [arrWindow addObject:_windowController];
+    }
     
 }
 
@@ -197,4 +203,3 @@ THE SOFTWARE.
 
 }
 @end
-

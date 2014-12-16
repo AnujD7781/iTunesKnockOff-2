@@ -33,7 +33,6 @@ THE SOFTWARE.
     // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
     _viewController = [[iTunesViewController alloc]initWithNibName:@"iTunesViewController" bundle:nil];
     [customView addSubview:_viewController.view];
-
 }
 
 @end
