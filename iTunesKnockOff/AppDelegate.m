@@ -34,7 +34,12 @@ THE SOFTWARE.
 @synthesize mainView = _mainView;
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-  
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterNoStyle];
+    [formatter setTimeStyle:NSDateFormatterMediumStyle];
+   NSString *startTime = [formatter stringFromDate:[NSDate date]];
+    NSLog(@"%@",startTime);
+    
     // Insert code here to initialize your application
     id closeButton = [self.window standardWindowButton:NSWindowCloseButton ];
     [closeButton setAction:@selector(closeapp:)];
