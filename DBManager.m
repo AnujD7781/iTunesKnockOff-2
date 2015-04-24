@@ -29,10 +29,13 @@ static sqlite3_stmt *statement = nil;
 @implementation DBManager
 
 +(DBManager*)getSharedInstance{
-    if (!sharedInstance) {
-        sharedInstance = [[super allocWithZone:NULL]init];
+    static dispatch_once_t oncePredicate;
+    
+    dispatch_once(&oncePredicate, ^{
+        sharedInstance = [[DBManager alloc] init];
         [sharedInstance createDB];
-    }
+    });
+    
     return sharedInstance;
 }
 

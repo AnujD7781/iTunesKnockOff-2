@@ -20,9 +20,9 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-#import "ArraySortFactory.h"
+#import "NSArraySortHelper.h"
 #import "SongData.h"
-@implementation ArraySortFactory
+@implementation NSArraySortHelper
 +(NSArray*) arraySortedArray:(NSArray*)arr {
     NSMutableArray *sortedArray = [[NSMutableArray alloc]init];
     NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];

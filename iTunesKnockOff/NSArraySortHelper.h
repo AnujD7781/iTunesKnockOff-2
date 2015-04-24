@@ -22,6 +22,6 @@ THE SOFTWARE.
 
 #import <Foundation/Foundation.h>
 
-@interface ArraySortFactory : NSObject
+@interface NSArraySortHelper : NSObject
 +(NSArray*) arraySortedArray:(NSArray*)arr;
 @end

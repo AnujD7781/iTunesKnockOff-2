@@ -30,7 +30,7 @@ THE SOFTWARE.
 #import "NSTableColumnManagerView.h"
 #import "MediaPlayerFlavor.h"
 #import "NSStringHelper.h"
-#import "ArraySortFactory.h"
+#import "NSArraySortHelper.h"
 
 static void *AVSPPlayerItemStatusContext = &AVSPPlayerItemStatusContext;
 static void *AVSPPlayerRateContext = &AVSPPlayerRateContext;
@@ -95,7 +95,7 @@ static void *AVSPPlayerLayerReadyForDisplay = &AVSPPlayerLayerReadyForDisplay;
         [MediaPlayerFlavor setLatestSelectedColumn:@"Title"];
     }
     
-    NSArray *sortedArray = [ArraySortFactory arraySortedArray:self.aryTracks ];
+    NSArray *sortedArray = [NSArraySortHelper arraySortedArray:self.aryTracks ];
     [self.aryTracks removeAllObjects];
     [self.aryTracks addObjectsFromArray:sortedArray];
     [self.tblViewPlaylist reloadData];

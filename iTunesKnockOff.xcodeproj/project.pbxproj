@@ -12,7 +12,7 @@
 		D48BDE951A3D7C7B00E8A235 /* NSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BDE941A3D7C7B00E8A235 /* NSStringHelper.m */; };
 		D48BDE961A3D7C7B00E8A235 /* NSStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D48BDE941A3D7C7B00E8A235 /* NSStringHelper.m */; };
 		D49745CC1A1573DF000B6890 /* NSArrayHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D49745CB1A1573DF000B6890 /* NSArrayHelper.m */; };
-		D49745CF1A158549000B6890 /* ArraySortFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = D49745CE1A158549000B6890 /* ArraySortFactory.m */; };
+		D49745CF1A158549000B6890 /* NSArraySortHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D49745CE1A158549000B6890 /* NSArraySortHelper.m */; };
 		D4B9E57419FBC24900FBAE8E /* MainWindowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E57219FBC24900FBAE8E /* MainWindowViewController.m */; };
 		D4B9E57519FBC24900FBAE8E /* MainWindowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4B9E57319FBC24900FBAE8E /* MainWindowViewController.xib */; };
 		D4B9E5A719FE430700FBAE8E /* iTunesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B9E5A519FE430700FBAE8E /* iTunesWindowController.m */; };
@@ -79,8 +79,8 @@
 		D48BDE941A3D7C7B00E8A235 /* NSStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringHelper.m; sourceTree = "<group>"; };
 		D49745CA1A1573DF000B6890 /* NSArrayHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArrayHelper.h; sourceTree = "<group>"; };
 		D49745CB1A1573DF000B6890 /* NSArrayHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArrayHelper.m; sourceTree = "<group>"; };
-		D49745CD1A158549000B6890 /* ArraySortFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArraySortFactory.h; sourceTree = "<group>"; };
-		D49745CE1A158549000B6890 /* ArraySortFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArraySortFactory.m; sourceTree = "<group>"; };
+		D49745CD1A158549000B6890 /* NSArraySortHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSArraySortHelper.h; sourceTree = "<group>"; };
+		D49745CE1A158549000B6890 /* NSArraySortHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSArraySortHelper.m; sourceTree = "<group>"; };
 		D4B9E57119FBC24900FBAE8E /* MainWindowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainWindowViewController.h; path = ../MainWindowViewController.h; sourceTree = "<group>"; };
 		D4B9E57219FBC24900FBAE8E /* MainWindowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainWindowViewController.m; path = ../MainWindowViewController.m; sourceTree = "<group>"; };
 		D4B9E57319FBC24900FBAE8E /* MainWindowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainWindowViewController.xib; path = ../MainWindowViewController.xib; sourceTree = "<group>"; };
@@ -184,8 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				D4D4F67A19E609A100DC85E6 /* SongFactory */,
-				D49745CD1A158549000B6890 /* ArraySortFactory.h */,
-				D49745CE1A158549000B6890 /* ArraySortFactory.m */,
+				D49745CD1A158549000B6890 /* NSArraySortHelper.h */,
+				D49745CE1A158549000B6890 /* NSArraySortHelper.m */,
 				D4EB3DD91A26D797004834A8 /* Column.h */,
 				D4EB3DDA1A26D797004834A8 /* Column.m */,
 				D48BDE8F1A3D620400E8A235 /* MediaPlayerFlavor.h */,
@@ -495,7 +495,7 @@
 				D48BDE951A3D7C7B00E8A235 /* NSStringHelper.m in Sources */,
 				D4D4F63E19E5422500DC85E6 /* CustomDrangNDropView.m in Sources */,
 				D49745CC1A1573DF000B6890 /* NSArrayHelper.m in Sources */,
-				D49745CF1A158549000B6890 /* ArraySortFactory.m in Sources */,
+				D49745CF1A158549000B6890 /* NSArraySortHelper.m in Sources */,
 				D4DDDACE19D227E100B72F23 /* AppDelegate.m in Sources */,
 				D4EB3DDB1A26D797004834A8 /* Column.m in Sources */,
 				D48BDE911A3D620400E8A235 /* MediaPlayerFlavor.m in Sources */,
