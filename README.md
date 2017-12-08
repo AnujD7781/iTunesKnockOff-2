@@ -19,6 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
-
-
-"Markdown test to check for:\n\n**Bold**\n*Italic*\n\n[URL link](http://www.cnn.com)\n[Mailto link](mailto:stefan@surkus.com)\n\nBulleted List\n* aaa\n* bbb\n* ccc\n\nNumbered List\n1. 111\n1. 222\n1. 333\n\n~~Strikethrough~~"
